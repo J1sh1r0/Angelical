@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios Angelicales</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Raleway', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #a1c4fd, #c2e9fb);
+            color: #333;
+            text-align: center;
+        }
+        .hero {
+            background: rgba(0, 0, 0, 0.4);
+            color: white;
+            padding: 80px 20px;
+            border-radius: 10px;
+            margin: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+        }
+        .hero p {
+            font-size: 1.5rem;
+            margin-top: 10px;
+        }
+        .section {
+            padding: 60px 20px;
+            background: white;
+            border-radius: 10px;
+            margin: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        .section h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        .section ul {
+            list-style: none;
+            padding: 0;
+            font-size: 1.2rem;
+        }
+        .btn-primary {
+            background: #6a11cb;
+            border: none;
+            font-size: 1.2rem;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+        .btn-primary:hover {
+            background: #2575fc;
+        }
+        footer {
+            background: #222;
+            color: white;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <header class="hero">
+        <h1>Servicios Angelicales</h1>
+        <p>Sanación y armonización para tu bienestar espiritual</p>
+    </header>
+
+    <main class="container">
+        <section class="section">
+            <h2>Nuestros Servicios</h2>
+            <ul>
+                <li>Desbloqueo, Sanación, Alineación, Polarización de los 7 Chakras</li>
+                <li>Reconocimiento de sistemas dañados</li>
+                <li>Autoconocimiento de emociones causantes de daños</li>
+                <li>Sanación con las manos a través de la energía de los ángeles</li>
+                <li>Armonización de las 7 capas</li>
+                <li>Sanación a un ser fallecido</li>
+                <li>Lectura de cartas angelicales</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>Casos Reales y de Éxito</h2>
+            <div class="row">
+                <div class="col-md-6 video-container">
+                    <video controls width="100%">
+                        <source src="video1.mp4" type="video/mp4">
+                        Tu navegador no soporta videos.
+                    </video>
+                </div>
+                <div class="col-md-6 video-container">
+                    <video controls width="100%">
+                        <source src="video2.mp4" type="video/mp4">
+                        Tu navegador no soporta videos.
+                    </video>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Realiza tu Pago</h2>
+            <p>Realiza tus pagos de manera segura a través de PayPal.</p>
+            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+                <input type="hidden" name="cmd" value="_s-xclick">
+                <input type="hidden" name="hosted_button_id" value="YOUR_BUTTON_ID">
+                <button type="submit" class="btn btn-primary">Pagar con PayPal</button>
+            </form>
+        </section>
+
+        <section class="section">
+            <h2>Contacto</h2>
+            <p>¿Tienes preguntas o necesitas más información? Escríbenos:</p>
+            <form action="submit_form.php" method="post">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" id="name" name="name" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Correo Electrónico</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+                <div class="mb-3">
+                    <label for="message" class="form-label">Mensaje</label>
+                    <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-success">Enviar</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Servicios Angelicales. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
