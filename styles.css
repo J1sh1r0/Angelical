@@ -186,17 +186,3 @@ footer {
 .informacion p {
     margin: 10px 0;
 }
-
-.informacion button {
-    padding: 10px 20px;
-    background-color: #007BFF; /* Fondo azul */
-    color: white;
-    border: none;
-    border-radius: 4px; /* Borde redondeado */
-    cursor: pointer;
-    transition: background-color 0.3s ease; /* Transición suave para hover */
-}
-
-.informacion button:hover {
-    background-color: #0056b3; /* Cambio de color al hacer hover */
-}
