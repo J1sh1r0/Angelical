@@ -1,91 +1,39 @@
 body {
     font-family: 'Poppins', sans-serif;
-    background: linear-gradient(to right, #2c003e, #000000);
+    background: #0a002b;
+    margin: 0;
+    overflow-x: hidden;
     color: #ddd;
     text-align: center;
-}
-
-/* Encabezado */
-.persuasive {
-    font-size: 3rem;
-    font-weight: bold;
-    color: #d8b6ff;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.2);
-    padding: 20px;
-}
-
-.subtitle {
-    font-size: 1.6rem;
-    color: #bbb;
-    font-style: italic;
-    margin-bottom: 20px;
-}
-
-/* Sección de Video */
-.video-section {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    margin: 30px 0;
-}
-
-.video-container {
-    width: 70%;
-    max-width: 800px;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0px 5px 20px rgba(255, 255, 255, 0.3);
-    border: 6px solid #d8b6ff;
-    padding: 5px;
-    background: rgba(255, 255, 255, 0.2);
     position: relative;
 }
 
-/* Flechas de Navegación */
-.arrow {
-    font-size: 2.5rem;
-    background: none;
-    border: none;
-    cursor: pointer;
-    opacity: 0.9;
-    transition: 0.3s;
-    color: #d8b6ff;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.1);
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+/* Fondo estrellado animado */
+.stars {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: radial-gradient(circle, rgba(18,0,43,0.8) 10%, rgba(0,0,0,1) 80%);
+    z-index: -1;
+}
+
+.star {
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 10;
+    background: rgba(255, 255, 255, 0.9);
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    box-shadow: 0 0 3px 1px rgba(255, 255, 255, 0.5);
+    opacity: 0.9;
+    animation: twinkle 6s infinite alternate ease-in-out;
 }
 
-.arrow::before {
-    content: '◀';
-    font-size: 2rem;
-    color: #d8b6ff;
-}
-
-.arrow.right::before {
-    content: '▶';
-    font-size: 2rem;
-    color: #d8b6ff;
-}
-
-.arrow.left {
-    left: -80px;
-}
-
-.arrow.right {
-    right: -80px;
+@keyframes twinkle {
+    0% { opacity: 0.5; transform: scale(1); box-shadow: 0 0 2px 1px rgba(255, 255, 255, 0.3); }
+    50% { opacity: 1; transform: scale(1.2); box-shadow: 0 0 5px 2px rgba(255, 255, 255, 0.6); }
+    100% { opacity: 0.7; transform: scale(1); box-shadow: 0 0 3px 1px rgba(255, 255, 255, 0.4); }
 }
 
 /* Sección de Servicios */
@@ -95,6 +43,14 @@ body {
     border-radius: 20px;
     margin-top: 20px;
     box-shadow: 0 5px 10px rgba(255, 255, 255, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .service-container {
@@ -110,7 +66,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-size: cover;
+    background-size: contain;
     background-position: center;
     border-radius: 50%;
     box-shadow: 0 5px 10px rgba(255, 255, 255, 0.2);
@@ -139,6 +95,7 @@ body {
     color: white;
     text-transform: uppercase;
     font-weight: bold;
+    margin-top: 20px;
 }
 
 .btn-primary:hover {
