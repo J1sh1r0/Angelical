@@ -165,15 +165,15 @@ footer {
 
 /* Estilo para la imagen dentro de cada oferta */
 .imagen img {
-    width: 150px; /* Ajusta el tamaño de la imagen */
+    width: 150px;
     height: auto;
-    border-radius: 8px; /* Borde redondeado */
-    margin-right: 20px; /* Espacio entre la imagen y el texto */
+    border-radius: 8px;
+    margin-right: 20px;
 }
 
 /* Estilo para el bloque de información */
 .informacion {
-    flex: 1; /* El bloque de texto ocupa el espacio restante */
+    flex: 1;
 }
 
 .informacion h3 {
