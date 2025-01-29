@@ -20,3 +20,20 @@ function createStars(num) {
 }
 
 createStars(120);
+
+// Video player navigation
+const videoSources = ["video1.mp4", "video2.mp4", "video3.mp4"]; // Lista de videos
+let currentVideoIndex = 0;
+const videoPlayer = document.getElementById("videoPlayer");
+
+function prevVideo() {
+    currentVideoIndex = (currentVideoIndex - 1 + videoSources.length) % videoSources.length;
+    videoPlayer.src = videoSources[currentVideoIndex];
+    videoPlayer.play();
+}
+
+function nextVideo() {
+    currentVideoIndex = (currentVideoIndex + 1) % videoSources.length;
+    videoPlayer.src = videoSources[currentVideoIndex];
+    videoPlayer.play();
+}

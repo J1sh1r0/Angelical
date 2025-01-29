@@ -36,6 +36,36 @@ body {
     100% { opacity: 0.7; transform: scale(1); box-shadow: 0 0 3px 1px rgba(255, 255, 255, 0.4); }
 }
 
+/* IDs de imagenes para fondos */
+#E1 {
+    background-image: url(Chakras/Chakras/AMARILLO.png),
+    linear-gradient(rgba(255, 255, 0, 0.3), rgba(0, 0, 0, 0.3));
+}
+#E2 {
+    background-image: url(Chakras/Chakras/AZUL.png),
+    linear-gradient(rgba(21, 0, 255, 0.3), rgba(0, 0, 0, 0.3));
+}
+#E3 {
+    background-image: url(Chakras/Chakras/CELESTE.png),
+    linear-gradient(rgba(0, 251, 255, 0.3), rgba(0, 0, 0, 0.3));
+}
+#E4 {
+    background-image: url(Chakras/Chakras/MORADO.png),
+    linear-gradient(rgba(187, 0, 255, 0.3), rgba(0, 0, 0, 0.3));
+}
+#E5 {
+    background-image: url(Chakras/Chakras/NARANJA.png),
+    linear-gradient(rgba(255, 166, 0, 0.3), rgba(0, 0, 0, 0.3));
+}
+#E6 {
+    background-image: url(Chakras/Chakras/ROJO.png),
+    linear-gradient(rgba(255, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
+}
+#E7 {
+    background-image: url(Chakras/Chakras/VERDE.png),
+    linear-gradient(rgba(26, 255, 0, 0.3), rgba(0, 0, 0, 0.3));
+}
+
 /* Sección de Servicios */
 .services {
     padding: 20px;
@@ -77,14 +107,6 @@ body {
     transition: 0.3s;
 }
 
-/* Imágenes de Chakras */
-.service:nth-child(1) { background-image: url('../Chakras/ROJO.png'); }
-.service:nth-child(2) { background-image: url('../Chakras/NARANJA.png'); }
-.service:nth-child(3) { background-image: url('../Chakras/AMARILLO.png'); }
-.service:nth-child(4) { background-image: url('../Chakras/VERDE.png'); }
-.service:nth-child(5) { background-image: url('../Chakras/AZUL.png'); }
-.service:nth-child(6) { background-image: url('../Chakras/MORADO.png'); }
-
 .btn-primary {
     background: #d8b6ff;
     border: none;
@@ -109,4 +131,84 @@ footer {
     margin-top: 40px;
     font-size: 1rem;
     letter-spacing: 1px;
+}
+
+.video-section {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0px;
+    
+    border: 4px solid #ffa9c689;; /* Morado neón */
+    /* border: 4px solid rgba(255, 251, 6, 0.507);  Morado neón */
+    border-radius: 15px;
+    box-shadow: 0 0 15px #ffa9c5;; /* Brillo neón */
+    /*box-shadow: 0 0 15px rgba(246, 255, 0, 0.8);  Brillo neón */
+    background-color: rgba(10, 0, 43, 0.8); /* Fondo oscuro */
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    /* padding: 10px; */
+}
+
+video {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Flechas de navegación con diseño mejorado */
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: linear-gradient(135deg, #a955f781, #3b1361); /* Degradado morado */
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 20px;
+    font-size: 30px;
+    border-radius: 50%;
+    transition: 0.3s;
+    box-shadow: 0 0 25px rgba(138, 43, 226, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+}
+
+.arrow i {
+    font-size: 24px;
+}
+
+.arrow:hover {
+    background: rgba(255, 255, 255, 0.661);
+    color: #9333ea;
+    box-shadow: 0 0 30px rgba(138, 43, 226, 1);
+}
+
+.left {
+    left: -200px; /* Más separación de la izquierda */
+}
+
+.right {
+    right: -200px; /* Más separación de la derecha */
+}
+
+/* Íconos personalizados con FontAwesome */
+.arrow::before {
+    content: '\f104'; /* Flecha izquierda */
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+}
+
+.right::before {
+    content: '\f105'; /* Flecha derecha */
 }

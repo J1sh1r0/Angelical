@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Servicios Angelicales</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
@@ -19,14 +20,14 @@
 
     <main class="container">
         <section class="video-section text-center">
-            <button class="arrow left" onclick="prevVideo()"></button>
+            <button class="arrow left" onclick="prevVideo()">&#10094;</button>
             <div class="video-container">
-                <video id="videoPlayer" controls width="100%">
+                <video id="videoPlayer" controls>
                     <source src="video1.mp4" type="video/mp4">
                     Tu navegador no soporta videos.
                 </video>
             </div>
-            <button class="arrow right" onclick="nextVideo()"></button>
+            <button class="arrow right" onclick="nextVideo()">&#10095;</button>
         </section>
 
         <section class="text-center p-4">
@@ -36,12 +37,14 @@
         <section class="services text-center">
             <h2>Nuestros Servicios</h2>
             <div class="service-container">
-                <div class="service">Limpieza de Cuerpo Etéreo</div>
-                <div class="service">Sanación</div>
-                <div class="service">Alineación</div>
-                <div class="service">Polarización de Chakras</div>
-                <div class="service">Sanación a un Ser Fallecido</div>
-                <div class="service">Lectura de Cartas Angelicales</div>
+                <div class="service" id="E1">Limpieza de Cuerpo Etéreo</div>
+                <div class="service" id="E2">Sanación</div>
+                <div class="service" id="E3">Alineación</div>
+                <div class="service" id="E4">Polarización de Chakras</div>
+                <div class="service" id="E5">Sanación a un Ser Fallecido</div>
+                <div class="service" id="E6">Lectura de Cartas Angelicales</div>
+                <!--Agregado para completar los 7 elementos del chakra, solo es propuesta-->
+                <div class="service" id="E7">Reconocimiento de sistemas dañados</div>
             </div>
         </section>
 

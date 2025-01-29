@@ -23,17 +23,43 @@
     </nav>
 
     <section id="pago" class="section">
-        <h2>Página de Paga</h2>
+        <h2>Paga con PayPal</h2>
         <p>Realiza tu pago de manera segura con PayPal.</p>
-        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
-            <input type="hidden" name="cmd" value="_s-xclick">
-            <input type="hidden" name="hosted_button_id" value="YOUR_BUTTON_ID">
-            <button type="submit" class="btn btn-primary">Pagar con PayPal</button>
-        </form>
+        
+        <!-- Contenedor del botón de PayPal -->
+        <div id="paypal-button-container"></div>
     </section>
 
     <footer>
         <p>&copy; 2025 Servicios Angelicales. Todos los derechos reservados.</p>
     </footer>
+
+    <!-- SDK de PayPal (Reemplaza TU_CLIENT_ID con el real) -->
+    <script src="https://www.paypal.com/sdk/js?client-id=23&currency=MXN"></script>
+    
+    <script>
+        paypal.Buttons({
+            createOrder: function(data, actions) {
+                return actions.order.create({
+                    purchase_units: [{
+                        amount: {
+                            value: '100.00' // Cambia este valor al precio real del servicio
+                        }
+                    }]
+                });
+            },
+            onApprove: function(data, actions) {
+                return actions.order.capture().then(function(details) {
+                    alert('Pago completado con éxito por ' + details.payer.name.given_name);
+                    console.log(details);
+                });
+            },
+            onError: function(err) {
+                console.error('Error en el pago:', err);
+                alert('Hubo un error al procesar el pago. Inténtalo de nuevo.');
+            }
+        }).render('#paypal-button-container');
+    </script>
+
 </body>
 </html>
