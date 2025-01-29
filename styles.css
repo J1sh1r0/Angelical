@@ -36,6 +36,36 @@ body {
     100% { opacity: 0.7; transform: scale(1); box-shadow: 0 0 3px 1px rgba(255, 255, 255, 0.4); }
 }
 
+/* IDs de imagenes para fondos */
+#E1 {
+    background-image: url(Chakras/Chakras/AMARILLO.png),
+    linear-gradient(rgba(255, 255, 0, 0.3), rgba(0, 0, 0, 0.3));
+}
+#E2 {
+    background-image: url(Chakras/Chakras/AZUL.png),
+    linear-gradient(rgba(21, 0, 255, 0.3), rgba(0, 0, 0, 0.3));
+}
+#E3 {
+    background-image: url(Chakras/Chakras/CELESTE.png),
+    linear-gradient(rgba(0, 251, 255, 0.3), rgba(0, 0, 0, 0.3));
+}
+#E4 {
+    background-image: url(Chakras/Chakras/MORADO.png),
+    linear-gradient(rgba(187, 0, 255, 0.3), rgba(0, 0, 0, 0.3));
+}
+#E5 {
+    background-image: url(Chakras/Chakras/NARANJA.png),
+    linear-gradient(rgba(255, 166, 0, 0.3), rgba(0, 0, 0, 0.3));
+}
+#E6 {
+    background-image: url(Chakras/Chakras/ROJO.png),
+    linear-gradient(rgba(255, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
+}
+#E7 {
+    background-image: url(Chakras/Chakras/VERDE.png),
+    linear-gradient(rgba(26, 255, 0, 0.3), rgba(0, 0, 0, 0.3));
+}
+
 /* Sección de Servicios */
 .services {
     padding: 20px;
@@ -76,14 +106,6 @@ body {
     text-align: center;
     transition: 0.3s;
 }
-
-/* Imágenes de Chakras */
-.service:nth-child(1) { background-image: url('../Chakras/ROJO.png'); }
-.service:nth-child(2) { background-image: url('../Chakras/NARANJA.png'); }
-.service:nth-child(3) { background-image: url('../Chakras/AMARILLO.png'); }
-.service:nth-child(4) { background-image: url('../Chakras/VERDE.png'); }
-.service:nth-child(5) { background-image: url('../Chakras/AZUL.png'); }
-.service:nth-child(6) { background-image: url('../Chakras/MORADO.png'); }
 
 .btn-primary {
     background: #d8b6ff;
