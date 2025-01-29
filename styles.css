@@ -1,0 +1,121 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, #2c003e, #000000);
+    color: #ddd;
+    text-align: center;
+}
+/* 5b2c7d */
+.persuasive {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #b19cd9;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.subtitle {
+    font-size: 1.4rem;
+    color: #aaa;
+    font-style: italic;
+}
+
+.video-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin: 30px 0;
+}
+
+.video-container {
+    width: 60%;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0px 5px 15px rgba(255, 255, 255, 0.3);
+    border: 5px solid #b19cd9;
+}
+
+.arrow {
+    font-size: 2.5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: 0.3s;
+    color: #b19cd9;
+}
+
+.arrow:hover {
+    opacity: 1;
+}
+
+.services {
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    margin-top: 20px;
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+}
+
+.service-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.service {
+    width: 160px;
+    height: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to right, #4b0082, #6a0dad);
+    border-radius: 50%;
+    box-shadow: 0 5px 10px rgba(255, 255, 255, 0.2);
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    transition: 0.3s;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.service:hover {
+    transform: scale(1.1);
+}
+
+/* Diferentes chakras */
+.chakra1 { background-image: url('chakra1.png'); }
+.chakra2 { background-image: url('chakra2.png'); }
+.chakra3 { background-image: url('chakra3.png'); }
+.chakra4 { background-image: url('chakra4.png'); }
+.chakra5 { background-image: url('chakra5.png'); }
+.chakra6 { background-image: url('chakra6.png'); }
+
+.btn-primary {
+    background: #6a0dad;
+    border: none;
+    font-size: 1.3rem;
+    padding: 12px 24px;
+    border-radius: 8px;
+    transition: 0.3s;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.btn-primary:hover {
+    background: #4b0082;
+}
+
+footer {
+    background: #220033;
+    color: white;
+    padding: 25px 0;
+    margin-top: 40px;
+    font-size: 1rem;
+    letter-spacing: 1px;
+}
