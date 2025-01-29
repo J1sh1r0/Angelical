@@ -23,6 +23,71 @@ body {
     margin-bottom: 20px;
 }
 
+/* Sección de Video */
+.video-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin: 30px 0;
+}
+
+.video-container {
+    width: 70%;
+    max-width: 800px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0px 5px 20px rgba(255, 255, 255, 0.3);
+    border: 6px solid #d8b6ff;
+    padding: 5px;
+    background: rgba(255, 255, 255, 0.2);
+    position: relative;
+}
+
+/* Flechas de Navegación */
+.arrow {
+    font-size: 2.5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    opacity: 0.9;
+    transition: 0.3s;
+    color: #d8b6ff;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+}
+
+.arrow::before {
+    content: '◀';
+    font-size: 2rem;
+    color: #d8b6ff;
+}
+
+.arrow.right::before {
+    content: '▶';
+    font-size: 2rem;
+    color: #d8b6ff;
+}
+
+.arrow.left {
+    left: -80px;
+}
+
+.arrow.right {
+    right: -80px;
+}
+
 /* Sección de Servicios */
 .services {
     padding: 20px;
@@ -56,36 +121,14 @@ body {
     transition: 0.3s;
 }
 
-.service:hover {
-    transform: scale(1.1);
-}
+/* Imágenes de Chakras */
+.service:nth-child(1) { background-image: url('../Chakras/ROJO.png'); }
+.service:nth-child(2) { background-image: url('../Chakras/NARANJA.png'); }
+.service:nth-child(3) { background-image: url('../Chakras/AMARILLO.png'); }
+.service:nth-child(4) { background-image: url('../Chakras/VERDE.png'); }
+.service:nth-child(5) { background-image: url('../Chakras/AZUL.png'); }
+.service:nth-child(6) { background-image: url('../Chakras/MORADO.png'); }
 
-/* Asignación de imágenes a cada círculo */
-.service:nth-child(1) {
-    background-image: url('Chakras/ROJO.png');
-}
-
-.service:nth-child(2) {
-    background-image: url('Chakras/NARANJA.png');
-}
-
-.service:nth-child(3) {
-    background-image: url('Chakras/AMARILLO.png');
-}
-
-.service:nth-child(4) {
-    background-image: url('Chakras/VERDE.png');
-}
-
-.service:nth-child(5) {
-    background-image: url('Chakras/AZUL.png');
-}
-
-.service:nth-child(6) {
-    background-image: url('Chakras/MORADO.png');
-}
-
-/* Botón de más información */
 .btn-primary {
     background: #d8b6ff;
     border: none;
@@ -102,7 +145,6 @@ body {
     background: #c59bff;
 }
 
-/* Pie de página */
 footer {
     background: #3b1e5a;
     color: white;
