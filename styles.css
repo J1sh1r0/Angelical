@@ -132,3 +132,135 @@ footer {
     font-size: 1rem;
     letter-spacing: 1px;
 }
+
+.oferta-container {
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    margin-top: 20px;
+    box-shadow: 0 5px 10px rgba(255, 255, 255, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    background-blend-mode: hard-light;
+}
+
+/* Estilo para cada oferta */
+.oferta {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    background-color: rgba(255, 255, 255, 0.3); /* Fondo semi-transparente */
+    padding: 15px;
+    border-radius: 10px;
+    width: 100%;
+}
+
+/* Estilo para la imagen dentro de cada oferta */
+.imagen img {
+    width: 150px; /* Ajusta el tamaño de la imagen */
+    height: auto;
+    border-radius: 8px; /* Borde redondeado */
+    margin-right: 20px; /* Espacio entre la imagen y el texto */
+}
+
+/* Estilo para el bloque de información */
+.informacion {
+    flex: 1; /* El bloque de texto ocupa el espacio restante */
+}
+
+.informacion h3 {
+    margin-top: 0;
+    font-size: 1.5em;
+    background-color: #4417606a;
+    border-radius: 40000px;
+}
+
+.informacion p {
+    margin: 10px 0;
+}
+
+.informacion button {
+    padding: 10px 20px;
+    background-color: #007BFF; /* Fondo azul */
+    color: white;
+    border: none;
+    border-radius: 4px; /* Borde redondeado */
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Transición suave para hover */
+}
+
+.informacion button:hover {
+    background-color: #0056b3; /* Cambio de color al hacer hover */
+}
+
+header {
+    top: 0;
+    width: 100%;
+    background: rgba(18, 0, 43, 0.8); /* Fondo oscuro */
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    z-index: 1;
+}
+
+header h1 {
+    font-size: 4em;
+    margin: 0;
+    background: linear-gradient(90deg, #b46682, #ffbed4, #e1b6e1); /* Tonos rosa y lila */
+    background-clip: text;
+    color: transparent;
+    text-align: center;
+    font-family: 'Dancing Script', cursive;
+}
+
+footer {
+    background: rgba(18, 0, 43, 0.8);
+    color: #fff;
+    padding: 20px 0;
+    margin-top: 40px;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+/* Estilo para el contenedor de navegación */
+.nav-container {
+    background-color: rgba(112, 44, 71, 0.7);
+    padding: 10px 0;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+/* Estilo para la lista de navegación */
+.nav-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: inline-flex;
+}
+
+/* Estilo para cada item de la lista */
+.nav-item {
+    margin: 0 20px;
+}
+
+/* Estilo para los enlaces */
+.nav-link {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+/* Cambio de color del texto al pasar el cursor sobre los enlaces */
+.nav-link:hover {
+    color: #ffbf00; /* Color amarillo dorado */
+}
