@@ -54,15 +54,44 @@
         <section class="services text-center">
             <h2>Nuestros Servicios</h2>
             <div class="service-container">
-                <div class="service" id="E1">Limpieza de Cuerpo Etéreo</div>
-                <div class="service" id="E2">Sanación</div>
-                <div class="service" id="E3">Alineación</div>
-                <div class="service" id="E4">Polarización de Chakras</div>
-                <div class="service" id="E5">Sanación a un Ser Fallecido</div>
-                <div class="service" id="E6">Lectura de Cartas Angelicales</div>
-                <!--Agregado para completar los 7 elementos del chakra, solo es propuesta-->
-                <div class="service" id="E7">Reconocimiento de sistemas dañados</div>
+                <div class="service" id="E1" onclick="toggleInfo('info1')">Limpieza de Cuerpo Etéreo</div>
+                <div class="service" id="E2" onclick="toggleInfo('info2')">Sanación</div>
+                <div class="service" id="E3" onclick="toggleInfo('info3')">Alineación</div>
+                <div class="service" id="E4" onclick="toggleInfo('info4')">Polarización de Chakras</div>
+                <div class="service" id="E5" onclick="toggleInfo('info5')">Sanación a un Ser Fallecido</div>
+                <div class="service" id="E6" onclick="toggleInfo('info6')">Lectura de Cartas Angelicales</div>
+                <div class="service" id="E7" onclick="toggleInfo('info7')">Reconocimiento de sistemas dañados</div>
             </div>
+
+            <!-- Información adicional para cada servicio -->
+    <div class="service-info" id="info1">
+        <strong>Limpieza de Cuerpo Etéreo:</strong> 
+        Elimina energías negativas y bloqueos energéticos, promoviendo un equilibrio y bienestar general.
+    </div>
+    <div class="service-info" id="info2">
+        <strong>Sanación:</strong> 
+        Terapia energética que restaura el flujo de energía en el cuerpo, ayudando a sanar a nivel físico y emocional.
+    </div>
+    <div class="service-info" id="info3">
+        <strong>Alineación:</strong> 
+        Un proceso que asegura que todos los centros energéticos (chakras) estén equilibrados y alineados para optimizar la salud.
+    </div>
+    <div class="service-info" id="info4">
+        <strong>Polarización de Chakras:</strong> 
+        Reequilibra los chakras para aumentar la armonía y energía positiva en el cuerpo y la mente.
+    </div>
+    <div class="service-info" id="info5">
+        <strong>Sanación a un Ser Fallecido:</strong> 
+        Ayuda a liberar a los seres queridos fallecidos de energías atrapadas, promoviendo la paz y la trascendencia.
+    </div>
+    <div class="service-info" id="info6">
+        <strong>Lectura de Cartas Angelicales:</strong> 
+        Una consulta espiritual que ofrece guía, consuelo y respuestas a través de la sabiduría de los ángeles.
+    </div>
+    <div class="service-info" id="info7">
+        <strong>Reconocimiento de sistemas dañados:</strong> 
+        Identifica bloqueos o fallos en los sistemas energéticos, buscando soluciones para restaurar el bienestar.
+    </div>
         </section>
 
         <div class="text-center">
@@ -70,10 +99,11 @@
         </div>
     </main>
 
+    <!-- Pie de página -->
     <footer class="text-center p-3">
         <p>&copy; 2025 Servicios Angelicales - Todos los derechos reservados</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js"></script> <!-- Enlace al archivo JS -->
 </body>
 </html>

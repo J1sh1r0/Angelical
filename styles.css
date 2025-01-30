@@ -105,6 +105,38 @@ body {
     color: white;
     text-align: center;
     transition: 0.3s;
+    cursor: pointer;
+}
+
+/* Agregar efecto de brillo a los divs cuando están activos */
+.service.active {
+    filter: brightness(1.5); /* Aumenta el brillo */
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.6); /* Agrega un sutil resplandor */
+}
+
+/* Estilo de la información de los servicios */
+/* Estilo inicial de la información del servicio */
+.service-info {
+    display: none; /* Oculto por defecto */
+    opacity: 0; /* Inicialmente transparente */
+    transform: translateY(-20px); /* Inicialmente desplazado hacia arriba */
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 20px;
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.1rem;
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Transición suave para opacidad y desplazamiento */
+}
+
+/* Estilo cuando la información se muestra */
+.service-info.show {
+    display: block; /* Aseguramos que se muestre */
+    opacity: 1; /* Totalmente visible */
+    transform: translateY(0); /* Desplazado a su posición original */
 }
 
 .btn-primary {
