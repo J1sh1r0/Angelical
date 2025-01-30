@@ -1,6 +1,6 @@
 body {
     font-family: 'Poppins', sans-serif;
-    background: #0a002b;
+    background: linear-gradient(to right, #2c003e, #000000);
     margin: 0;
     overflow-x: hidden;
     color: #ddd;
@@ -388,21 +388,38 @@ footer {
 
 .pago-title {
     font-size: 2.5rem;
-    margin-bottom: 15px;
+    margin-bottom: 30px;
     text-transform: uppercase;
     font-weight: bold;
     color: #ff00e1ac;
 }
 
-.pago-subtitle {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
-    color: #e0d4fc;
+/* Estructura principal */
+.pago-layout {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 900px;
+    margin: 0 auto;
+    gap: 40px;
 }
 
+/* Resumen de compra (lado izquierdo) */
+.pago-resumen {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
+    width: 50%;
+    text-align: left;
+    font-size: 1.1rem;
+}
+
+/* Tarjeta de pago con PayPal (lado derecho) */
 .pago-container {
     display: flex;
     justify-content: center;
+    width: 50%;
 }
 
 .pago-card {
@@ -429,6 +446,12 @@ footer {
     box-shadow: 0 4px 10px rgba(255, 215, 0, 0.6);
 }
 
+.pago-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: #e0d4fc;
+}
+
 .pago-card-title {
     font-size: 1.8rem;
     margin-bottom: 10px;
@@ -450,4 +473,16 @@ footer {
 .paypal-btn:hover {
     background: linear-gradient(135deg, #ffbb00, #ffd700);
     box-shadow: 0 6px 15px rgba(255, 215, 0, 0.8);
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+    .pago-layout {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .pago-resumen, .pago-container {
+        width: 100%;
+    }
 }
