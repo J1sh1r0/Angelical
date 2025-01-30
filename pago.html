@@ -1,35 +1,58 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Paga - Servicios Angelicales</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Dancing+Script&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
+
+<header class="text-center p-4">
+    <h1 class="persuasive">Sanación y Equilibrio Espiritual</h1>
+    <p class="subtitle">Descubre el poder de la energía y transforma tu vida</p>
+</header>
+
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-            <a class="navbar-brand" href="#">Servicios Angelicales</a>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="oferta.html">Oferta</a></li>
-                    <li class="nav-item"><a class="nav-link" href="pago.html">Paga</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
-                </ul>
+    <nav class="nav-container">
+        <ul class="nav-list">
+            <li class="nav-item">
+                <a href="index.html" class="nav-link">Inicio</a>
+            </li>
+            <li class="nav-item">
+                <a href="oferta.html" class="nav-link">Ofertas</a>
+            </li>
+            <li class="nav-item">
+                <a href="pago.html" class="nav-link">Pago</a>
+            </li>
+            <li class="nav-item">
+                <a href="contacto.html" class="nav-link">Contacto</a>
+            </li>
+        </ul>
+    </nav>
+    <section id="pago" class="pago-section">
+        <div class="container text-center">
+            <h2 class="pago-title">PAGA CON PAYPAL</h2>
+            
+            <div class="pago-layout">
+                <!-- Sección izquierda: Resumen de compra -->
+                <div class="pago-resumen">
+                    <h3>Resumen de Compra</h3>
+                    <p>Aquí aparecerá la descripción del servicio seleccionado en la sección de ofertas.</p>
+                </div>
+
+                <!-- Sección derecha: Pago con PayPal -->
+                <div class="pago-container">
+                    <div class="pago-card">
+                        <h3 class="pago-card-title">Servicio de Sanación</h3>
+                        <p class="pago-card-price">$100.00 MXN</p>
+                        <a href="https://www.paypal.com/paypalme/tucuenta/100.00" target="_blank" rel="noopener" class="paypal-btn">Pagar con PayPal</a>
+                    </div>
+                </div>
             </div>
         </div>
-    </nav>
-
-    <section id="pago" class="section">
-        <h2>Página de Paga</h2>
-        <p>Realiza tu pago de manera segura con PayPal.</p>
-        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
-            <input type="hidden" name="cmd" value="_s-xclick">
-            <input type="hidden" name="hosted_button_id" value="YOUR_BUTTON_ID">
-            <button type="submit" class="btn btn-primary">Pagar con PayPal</button>
-        </form>
     </section>
 
     <footer>
