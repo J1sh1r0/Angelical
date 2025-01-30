@@ -22,9 +22,14 @@ function createStars(num) {
 createStars(120);
 
 // Video player navigation
-const videoSources = ["video1.mp4", "video2.mp4", "video3.mp4"]; // Lista de videos
+const videoSources = ["Video1.mp4", "Video2.mp4", "Video3.mp4", "Video4.mp4"]; // Lista de videos
 let currentVideoIndex = 0;
 const videoPlayer = document.getElementById("videoPlayer");
+
+// Ajustar tamaño del video para mantener diseño uniforme
+videoPlayer.style.width = "100%";
+videoPlayer.style.height = "auto";
+videoPlayer.style.maxHeight = "400px"; // Altura máxima fija para evitar cambios en la página
 
 function prevVideo() {
     currentVideoIndex = (currentVideoIndex - 1 + videoSources.length) % videoSources.length;
