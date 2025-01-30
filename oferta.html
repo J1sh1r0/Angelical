@@ -1,23 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Oferta - Servicios Angelicales</title>
+    <title>Paga - Servicios Angelicales</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Dancing+Script&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <!--Necesitamos informacion acerca de como se manejan los paquetes (individual paquete)-->
+    <style>
+        /* CSS adicional */
+        .imagen {
+            margin-top: -20px; /* Mueve la imagen hacia arriba */
+        }
+        .btn-adquirir {
+            width: 100%; /* Estira el botón para que ocupe todo el ancho */
+        }
+    </style>
 </head>
-<body>
-    <div class="stars"></div>
-    <!-- Header con el título y el subtítulo -->
-    <header class="text-center p-4" >
-        <h1 class="persuasive">Sanación y Equilibrio Espiritual</h1>
-        <p class="subtitle">Descubre el poder de la energía y transforma tu vida</p>
-    </header>
 
+<header class="text-center p-4">
+    <h1 class="persuasive">Sanación y Equilibrio Espiritual</h1>
+    <p class="subtitle">Descubre el poder de la energía y transforma tu vida</p>
+</header>
+
+<body>
     <nav class="nav-container">
         <ul class="nav-list">
             <li class="nav-item">
@@ -38,61 +45,84 @@
     <section id="oferta" class="section">
         <h2>Página de Oferta</h2>
         <p>Descubre nuestras ofertas especiales en sanación y equilibrio energético.</p>
-        <div class="oferta-container">
-            <div class="oferta">
-                <div class="imagen">
-                    <img src="Chakras/Chakras/AMARILLO.png" alt="Imagen de oferta">
-                </div>
-                <div class="informacion">
-                    <h3>TITULO DE LA OFERTA 1</h3>
-                    <p>Descripción de la oferta 1. Aquí va más información sobre la oferta.</p>
-                    <div class="text-center">
-                        <a href="pago.html" class="btn btn-primary">Adquirir</a>
+
+        <!-- Usamos la rejilla de Bootstrap -->
+        <div class="container">
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4"> <!-- Aquí definimos la rejilla -->
+                
+                <!-- Oferta 1 -->
+                <div class="col">
+                    <div class="oferta">
+                        <div class="imagen">
+                            <img src="Chakras/Chakras/AMARILLO.png" class="img-fluid" alt="Oferta 1">
+                        </div>
+                        <div class="informacion">
+                            <h3>TITULO DE LA OFERTA 1</h3>
+                            <p>Descripción de la oferta 1. Aquí va más información sobre la oferta.</p>
+                            <div class="text-center">
+                                <a href="pago.html" class="btn btn-primary btn-adquirir">Adquirir</a> <!-- Botón con clase personalizada -->
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="oferta">
-                <div class="imagen">
-                    <img src="Chakras/Chakras/AMARILLO.png" alt="Imagen de oferta">
-                </div>
-                <div class="informacion">
-                    <h3>TITULO DE LA OFERTA 2</h3>
-                    <p>Descripción de la oferta 2. Aquí va más información sobre la oferta.</p>
-                    <div class="text-center">
-                        <a href="pago.html" class="btn btn-primary">Adquirir</a>
+
+                <!-- Oferta 2 -->
+                <div class="col">
+                    <div class="oferta">
+                        <div class="imagen">
+                            <img src="Chakras/Chakras/AMARILLO.png" class="img-fluid" alt="Oferta 2">
+                        </div>
+                        <div class="informacion">
+                            <h3>TITULO DE LA OFERTA 2</h3>
+                            <p>Descripción de la oferta 2. Aquí va más información sobre la oferta.</p>
+                            <div class="text-center">
+                                <a href="pago.html" class="btn btn-primary btn-adquirir">Adquirir</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="oferta">
-                <div class="imagen">
-                    <img src="Chakras/Chakras/AMARILLO.png" alt="Imagen de oferta">
-                </div>
-                <div class="informacion">
-                    <h3>TITULO DE LA OFERTA 3</h3>
-                    <p>Descripción de la oferta 3. Aquí va más información sobre la oferta.</p>
-                    <div class="text-center">
-                        <a href="pago.html" class="btn btn-primary">Adquirir</a>
+
+                <!-- Oferta 3 -->
+                <div class="col">
+                    <div class="oferta">
+                        <div class="imagen">
+                            <img src="Chakras/Chakras/AMARILLO.png" class="img-fluid" alt="Oferta 3">
+                        </div>
+                        <div class="informacion">
+                            <h3>TITULO DE LA OFERTA 3</h3>
+                            <p>Descripción de la oferta 3. Aquí va más información sobre la oferta.</p>
+                            <div class="text-center">
+                                <a href="pago.html" class="btn btn-primary btn-adquirir">Adquirir</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="oferta">
-                <div class="imagen">
-                    <img src="Chakras/Chakras/AMARILLO.png" alt="Imagen de oferta 4">
-                </div>
-                <div class="informacion">
-                    <h3>TITULO DE LA OFERTA 4</h3>
-                    <p>Descripción de la oferta 4. Aquí va más información sobre la oferta.</p>
-                    <div class="text-center">
-                        <a href="pago.html" class="btn btn-primary">Adquirir</a>
+
+                <!-- Oferta 4 -->
+                <div class="col">
+                    <div class="oferta">
+                        <div class="imagen">
+                            <img src="Chakras/Chakras/AMARILLO.png" class="img-fluid" alt="Oferta 4">
+                        </div>
+                        <div class="informacion">
+                            <h3>TITULO DE LA OFERTA 4</h3>
+                            <p>Descripción de la oferta 4. Aquí va más información sobre la oferta.</p>
+                            <div class="text-center">
+                                <a href="pago.html" class="btn btn-primary btn-adquirir">Adquirir</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
-    
 
     <footer>
         <p>&copy; 2025 Servicios Angelicales. Todos los derechos reservados.</p>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
 </body>
 </html>
