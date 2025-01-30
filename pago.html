@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,44 +22,23 @@
         </div>
     </nav>
 
-    <section id="pago" class="section">
-        <h2>Paga con PayPal</h2>
-        <p>Realiza tu pago de manera segura con PayPal.</p>
-        
-        <!-- Contenedor del botón de PayPal -->
-        <div id="paypal-button-container"></div>
+    <section id="pago" class="pago-section">
+        <div class="container text-center">
+            <h2 class="pago-title">Paga con PayPal</h2>
+            <p class="pago-subtitle">Realiza tu pago de manera segura con PayPal.</p>
+            
+            <div class="pago-container">
+                <div class="pago-card">
+                    <h3 class="pago-card-title">Servicio de Sanación</h3>
+                    <p class="pago-card-price">$ N Cantidad MXN</p>
+                    <a href="https://www.paypal.com/paypalme/tucuenta/100.00" target="_blank" rel="noopener" class="paypal-btn">Pagar con PayPal</a>
+                </div>
+            </div>
+        </div>
     </section>
 
     <footer>
         <p>&copy; 2025 Servicios Angelicales. Todos los derechos reservados.</p>
     </footer>
-
-    <!-- SDK de PayPal (Reemplaza TU_CLIENT_ID con el real) -->
-    <script src="https://www.paypal.com/sdk/js?client-id=23&currency=MXN"></script>
-    
-    <script>
-        paypal.Buttons({
-            createOrder: function(data, actions) {
-                return actions.order.create({
-                    purchase_units: [{
-                        amount: {
-                            value: '100.00' // Cambia este valor al precio real del servicio
-                        }
-                    }]
-                });
-            },
-            onApprove: function(data, actions) {
-                return actions.order.capture().then(function(details) {
-                    alert('Pago completado con éxito por ' + details.payer.name.given_name);
-                    console.log(details);
-                });
-            },
-            onError: function(err) {
-                console.error('Error en el pago:', err);
-                alert('Hubo un error al procesar el pago. Inténtalo de nuevo.');
-            }
-        }).render('#paypal-button-container');
-    </script>
-
 </body>
 </html>

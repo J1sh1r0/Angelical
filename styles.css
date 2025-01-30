@@ -378,3 +378,76 @@ footer {
     color: #ffbf00; /* Color amarillo dorado */
 }
 
+/* Sección de Pago */
+.pago-section {
+    padding: 120px 0;
+    background: linear-gradient(to right, #3b1e5a, #000000);
+    color: white;
+    text-align: center;
+}
+
+.pago-title {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #ff00e1ac;
+}
+
+.pago-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: #e0d4fc;
+}
+
+.pago-container {
+    display: flex;
+    justify-content: center;
+}
+
+.pago-card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
+    max-width: 400px;
+    text-align: center;
+}
+
+/* Estilos del botón de PayPal */
+.paypal-btn {
+    display: inline-block;
+    background: linear-gradient(135deg, #ffd700, #ffbb00);
+    color: #000;
+    padding: 12px 25px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 8px;
+    transition: 0.3s;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(255, 215, 0, 0.6);
+}
+
+.pago-card-title {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: #ff00e17a;
+}
+
+.pago-card-price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+/* Estilos del botón de PayPal */
+#paypal-button-container {
+    margin-top: 20px;
+}
+
+.paypal-btn:hover {
+    background: linear-gradient(135deg, #ffbb00, #ffd700);
+    box-shadow: 0 6px 15px rgba(255, 215, 0, 0.8);
+}

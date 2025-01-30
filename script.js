@@ -100,3 +100,27 @@ function toggleInfo(infoId) {
         serviceElement.classList.remove('active'); // Eliminar el brillo del servicio
     }
 }
+
+document.addEventListener("DOMContentLoaded", function() {
+    paypal.Buttons({
+        createOrder: function(data, actions) {
+            return actions.order.create({
+                purchase_units: [{
+                    amount: {
+                        value: '100.00' // Precio del servicio
+                    }
+                }]
+            });
+        },
+        onApprove: function(data, actions) {
+            return actions.order.capture().then(function(details) {
+                alert('Pago completado con éxito por ' + details.payer.name.given_name);
+                console.log(details);
+            });
+        },
+        onError: function(err) {
+            console.error('Error en el pago:', err);
+            alert('Hubo un error al procesar el pago. Inténtalo de nuevo.');
+        }
+    }).render('#paypal-button-container');
+});
