@@ -434,7 +434,9 @@ footer {
 /* Estilos del botón de PayPal */
 .paypal-btn {
     display: inline-block;
-    background: linear-gradient(135deg, #ffd700, #ffbb00);
+    background: linear-gradient(135deg, #001eff, #1500ff);
+    
+    /* background: linear-gradient(135deg, #433dff, #1404f0a3); */
     color: #000;
     padding: 12px 25px;
     font-size: 1.2rem;
@@ -471,8 +473,9 @@ footer {
 }
 
 .paypal-btn:hover {
-    background: linear-gradient(135deg, #ffbb00, #ffd700);
-    box-shadow: 0 6px 15px rgba(255, 215, 0, 0.8);
+    /* background: linear-gradient(135deg, #001eff, #1500ff); */
+    background: linear-gradient(135deg, #433dff, #1404f0a3);
+    box-shadow: 0 6px 15px rgba(0, 85, 255, 0.8);
 }
 
 /* Responsive */
