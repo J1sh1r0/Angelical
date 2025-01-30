@@ -380,64 +380,76 @@ footer {
 
 /* Sección de Pago */
 .pago-section {
-    padding: 120px 0;
+    padding: 80px 0;
     background: linear-gradient(to right, #3b1e5a, #000000);
     color: white;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
+/* Título de pago */
 .pago-title {
     font-size: 2.5rem;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
     text-transform: uppercase;
     font-weight: bold;
-    color: #ff00e1ac;
+    color: #ff00e1;
 }
 
-/* Estructura principal */
-.pago-layout {
+/* Contenedor principal de pago */
+.pago-layout  {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 900px;
-    margin: 0 auto;
-    gap: 40px;
+    justify-content: center; /* Asegura que los elementos estén centrados */
+    align-items: flex-start; /* Asegura que los elementos se alineen arriba */
+    gap: 50px;
+    width: 90%;
+    max-width: 1200px;
+    flex-wrap: wrap; /* Para mejor adaptación en pantallas pequeñas */
 }
 
 /* Resumen de compra (lado izquierdo) */
 .pago-resumen {
     background: rgba(255, 255, 255, 0.1);
-    padding: 25px;
+    padding: 30px;
     border-radius: 15px;
-    box-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
-    width: 50%;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+    width: 45%; /* Para que ambos divs ocupen la misma cantidad de espacio */
+    min-height: 200px; /* Mantiene altura uniforme */
     text-align: left;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centra el contenido verticalmente */
 }
 
 /* Tarjeta de pago con PayPal (lado derecho) */
 .pago-container {
     display: flex;
     justify-content: center;
-    width: 50%;
+    width: 45%; /* Para que ambos divs sean iguales */
 }
 
 .pago-card {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.15);
     padding: 30px;
     border-radius: 15px;
-    box-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
     max-width: 400px;
     text-align: center;
+    min-height: 200px; /* Igualando la altura */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centra el contenido */
 }
+
 
 /* Estilos del botón de PayPal */
 .paypal-btn {
     display: inline-block;
-    background: linear-gradient(135deg, #001eff, #1500ff);
-    
-    /* background: linear-gradient(135deg, #433dff, #1404f0a3); */
-    color: #000;
+    background: linear-gradient(135deg, #ffd700, #ffbb00);
+    color: black;
     padding: 12px 25px;
     font-size: 1.2rem;
     font-weight: bold;
@@ -448,44 +460,26 @@ footer {
     box-shadow: 0 4px 10px rgba(255, 215, 0, 0.6);
 }
 
-.pago-subtitle {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
-    color: #e0d4fc;
-}
-
-.pago-card-title {
-    font-size: 1.8rem;
-    margin-bottom: 10px;
-    color: #ff00e17a;
-}
-
-.pago-card-price {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #fff;
-    margin-bottom: 20px;
-}
-
-/* Estilos del botón de PayPal */
-#paypal-button-container {
-    margin-top: 20px;
-}
-
 .paypal-btn:hover {
-    /* background: linear-gradient(135deg, #001eff, #1500ff); */
-    background: linear-gradient(135deg, #433dff, #1404f0a3);
-    box-shadow: 0 6px 15px rgba(0, 85, 255, 0.8);
+    background: linear-gradient(135deg, #ffbb00, #ffd700);
+    box-shadow: 0 6px 15px rgba(255, 215, 0, 0.8);
 }
 
 /* Responsive */
 @media screen and (max-width: 768px) {
     .pago-layout {
         flex-direction: column;
-        gap: 20px;
+        align-items: center;
     }
-    
+
     .pago-resumen, .pago-container {
-        width: 100%;
+        width: 90%; /* Ocuparán casi todo el ancho en móviles */
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .pago-resumen {
+        text-align: center;
     }
 }
