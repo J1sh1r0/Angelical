@@ -147,28 +147,31 @@
     <!-- Enlace al archivo JS -->
 
     <script>
-      // Solo cargar el modal si el usuario NO ha registrado sus datos
-      if (!localStorage.getItem("registroCompleto")) {
+      // Función para cargar el modal desde el archivo externo y configurarlo
+      function cargarFormularioRegistro() {
         fetch("registro_modal.html")
           .then((response) => response.text())
           .then((data) => {
             let div = document.createElement("div");
             div.innerHTML = data;
             document.body.appendChild(div);
-            setupModal();
+            setupModal(); // Llamar a la función después de cargar el modal
           })
           .catch((error) =>
             console.error("Error al cargar el formulario:", error)
           );
       }
 
+      // Función para manejar el cierre del modal después de registrar
       function setupModal() {
+        let modal = document.getElementById("modalRegistro");
+        if (!modal) return;
+
         const form = document.getElementById("registroForm");
         if (!form) return;
 
         form.addEventListener("submit", function (event) {
           event.preventDefault();
-
           let formData = new FormData(form);
 
           fetch("registrar_usuario.php", {
@@ -180,13 +183,20 @@
               console.log(data);
               alert("Registro exitoso");
 
-              // Guardar en localStorage y cerrar el modal
+              // Guardar en localStorage que el usuario ya completó el formulario
               localStorage.setItem("registroCompleto", "true");
-              document.getElementById("modalRegistro").style.display = "none";
+
+              // Cerrar el modal y permitir ver la página
+              modal.style.display = "none";
               document.body.classList.remove("modal-active");
             })
             .catch((error) => console.error("Error en el registro:", error));
         });
+      }
+
+      // Solo cargar el modal si el usuario NO ha registrado sus datos
+      if (!localStorage.getItem("registroCompleto")) {
+        cargarFormularioRegistro();
       }
     </script>
   </body>

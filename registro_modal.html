@@ -98,6 +98,19 @@
         background: linear-gradient(135deg, #c59bff, #9c5fe9);
         transform: scale(1.05);
         box-shadow: 0 0 15px rgba(197, 155, 255, 0.8);
+        .close-modal {
+          background: none;
+          border: none;
+          color: white;
+          font-size: 1.5rem;
+          position: absolute;
+          top: 15px;
+          right: 20px;
+          cursor: pointer;
+        }
+        .close-modal:hover {
+          color: #ff6666;
+        }
       }
     </style>
   </head>
@@ -157,9 +170,44 @@
               placeholder="Código Postal"
             />
           </div>
+          <button type="button" id="cerrarModal" class="close-modal">✖</button>
           <button type="submit" class="btn-submit">Registrar</button>
         </form>
       </div>
     </div>
+
+    <script>
+      document
+        .getElementById("registroForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault(); // Evitar que la página se recargue
+
+          let formData = new FormData(this);
+
+          fetch("registrar_usuario.php", {
+            method: "POST",
+            body: formData,
+          })
+            .then((response) => response.text())
+            .then((data) => {
+              console.log(data); // Depuración: Ver respuesta del servidor en consola
+              alert("Registro exitoso");
+
+              // Guardar en localStorage que el usuario ya completó el formulario
+              localStorage.setItem("registroCompleto", "true");
+
+              // Cerrar el modal y permitir ver la página
+              document.getElementById("modalRegistro").style.display = "none";
+              document.body.classList.remove("modal-active");
+            })
+            .catch((error) => console.error("Error en el registro:", error));
+        });
+      document
+        .getElementById("cerrarModal")
+        .addEventListener("click", function () {
+          document.getElementById("modalRegistro").style.display = "none";
+          document.body.classList.remove("modal-active");
+        });
+    </script>
   </body>
 </html>
