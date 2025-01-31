@@ -161,49 +161,5 @@
         </form>
       </div>
     </div>
-
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        // Verificar si el usuario ya completó el formulario
-        if (localStorage.getItem("registroCompleto") === "true") {
-          document.getElementById("modalRegistro").style.display = "none";
-          document.body.classList.remove("modal-active");
-        } else {
-          document.body.classList.add("modal-active");
-          document.getElementById("modalRegistro").style.display = "flex";
-        }
-      });
-
-      document
-        .getElementById("registroForm")
-        .addEventListener("submit", function (event) {
-          event.preventDefault(); // Evitar que la página se recargue
-
-          let formData = new FormData(this);
-
-          fetch("registrar_usuario.php", {
-            method: "POST",
-            body: formData,
-          })
-            .then((response) => response.text())
-            .then((data) => {
-              console.log(data); // Depuración: Ver respuesta del servidor en consola
-              alert("Registro exitoso");
-
-              // Guardar en localStorage que el usuario ya completó el formulario
-              localStorage.setItem("registroCompleto", "true");
-
-              // Cerrar el modal y permitir ver la página
-              document.getElementById("modalRegistro").style.display = "none";
-              document.body.classList.remove("modal-active");
-
-              // Forzar una recarga de la página después del registro para asegurarnos de que el estado persiste
-              setTimeout(() => {
-                window.location.reload();
-              }, 500);
-            })
-            .catch((error) => console.error("Error en el registro:", error));
-        });
-    </script>
   </body>
 </html>
