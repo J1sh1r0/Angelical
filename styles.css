@@ -6,6 +6,7 @@ body {
     color: #ddd;
     text-align: center;
     position: relative;
+    margin-top: 60px; /* Deja espacio para que el contenido no quede cubierto por la barra fija */
 }
 
 /* Fondo estrellado animado */
@@ -66,7 +67,6 @@ body {
     linear-gradient(rgba(26, 255, 0, 0.3), rgba(0, 0, 0, 0.3));
 }
 
-/* Sección de Servicios */
 /* Sección de Servicios */
 .services {
     padding: 20px;
@@ -166,6 +166,87 @@ footer {
     font-size: 1rem;
     letter-spacing: 1px;
 }
+
+.video-section {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    max-width: 700px;
+    margin: 30px auto;
+    padding: 0px;
+    
+    border: 4px solid #ffa9c689;; /* Morado neón */
+    /* border: 4px solid rgba(255, 251, 6, 0.507);  Morado neón */
+    border-radius: 15px;
+    box-shadow: 0 0 15px #ffa9c5;; /* Brillo neón */
+    /*box-shadow: 0 0 15px rgba(246, 255, 0, 0.8);  Brillo neón */
+    background-color: rgba(10, 0, 43, 0.8); /* Fondo oscuro */
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    /* padding: 10px; */
+}
+
+video {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Flechas de navegación con diseño mejorado */
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: linear-gradient(135deg, #a955f781, #3b1361); /* Degradado morado */
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 20px;
+    font-size: 30px;
+    border-radius: 50%;
+    transition: 0.3s;
+    box-shadow: 0 0 25px rgba(138, 43, 226, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+}
+
+.arrow i {
+    font-size: 24px;
+}
+
+.arrow:hover {
+    background: rgba(255, 255, 255, 0.661);
+    color: #9333ea;
+    box-shadow: 0 0 30px rgba(138, 43, 226, 1);
+}
+
+.left {
+    left: -200px; /* Más separación de la izquierda */
+}
+
+.right {
+    right: -200px; /* Más separación de la derecha */
+}
+
+/* Íconos personalizados con FontAwesome */
+.arrow::before {
+    content: '\f104'; /* Flecha izquierda */
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+}
+
+.right::before {
+    content: '\f105'; /* Flecha derecha */
+}
+
 
 .oferta-container {
     padding: 20px;
@@ -271,6 +352,11 @@ footer {
     padding: 10px 0;
     text-align: center;
     transition: background-color 0.3s;
+    position: fixed; /* Fija la barra en la parte superior */
+    top: 0; /* Posición en la parte superior de la pantalla */
+    width: 100%; /* Asegura que ocupe todo el ancho */
+    z-index: 10; /* Asegura que la barra quede por encima de otros elementos */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Sombra sutil para darle un efecto flotante */
 }
 
 /* Estilo para la lista de navegación */
@@ -297,4 +383,21 @@ footer {
 /* Cambio de color del texto al pasar el cursor sobre los enlaces */
 .nav-link:hover {
     color: #ffbf00; /* Color amarillo dorado */
+}
+
+/* Estilo para el botón de cierre */
+.close-info {
+    background-color: #cc0055; /* Rojo para llamar la atención */
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    margin-top: 10px;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.close-info:hover {
+    background-color: #8b003a; /* Un tono más oscuro al hacer hover */
 }
