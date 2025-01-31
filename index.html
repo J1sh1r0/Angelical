@@ -144,86 +144,50 @@
   <!-- Enlace al archivo JS -->
 
   <script>
-    // Función para cargar el modal desde el archivo externo y configurarlo
     function cargarFormularioRegistro() {
-      console.log("Intentando cargar el modal...");
-
-      fetch("registro_modal.html")
-        .then((response) => {
-          if (!response.ok) {
-            throw new Error(
-              "Error al cargar registro_modal.html: " + response.status
-            );
-          }
-          return response.text();
-        })
-        .then((data) => {
-          let div = document.createElement("div");
-          div.innerHTML = data;
-          document.body.appendChild(div);
-
-          console.log("Modal cargado correctamente.");
-          setupModal(); // Llamar a la función para enlazar eventos
-        })
-        .catch((error) => console.error("Error en fetch del modal:", error));
+        fetch("registro_modal.html")
+            .then(response => response.text())
+            .then(data => {
+                let div = document.createElement("div");
+                div.innerHTML = data;
+                document.body.appendChild(div);
+                setupModal(); // Asegura que los eventos estén listos
+            })
+            .catch(error => console.error("Error al cargar el formulario:", error));
     }
 
-    // Solo cargar el modal si el usuario NO ha registrado sus datos
-    if (localStorage.getItem("registroCompleto") !== "true") {
-      cargarFormularioRegistro();
-    }
-
-    // Función para manejar el cierre del modal después de registrar
     function setupModal() {
-      let modal = document.getElementById("modalRegistro");
-      if (!modal) {
-        console.error("No se encontró el modal en el DOM.");
-        return;
-      }
+        let modal = document.getElementById("modalRegistro");
+        let form = document.getElementById("registroForm");
 
-      const form = document.getElementById("registroForm");
-      if (!form) {
-        console.error("No se encontró el formulario dentro del modal.");
-        return;
-      }
+        if (!modal || !form) return;
 
-      form.addEventListener("submit", function (event) {
-        event.preventDefault();
-        let formData = new FormData(form);
+        form.addEventListener("submit", function (event) {
+            event.preventDefault();
+            let formData = new FormData(form);
 
-        fetch("registrar_usuario.php", {
-          method: "POST",
-          body: formData,
-        })
-          .then((response) => response.text())
-          .then((data) => {
-            console.log("Respuesta del servidor:", data);
-            alert("Registro exitoso");
+            fetch("registrar_usuario.php", {
+                method: "POST",
+                body: formData,
+            })
+            .then(response => response.text())
+            .then(data => {
+                console.log("Respuesta del servidor:", data);
+                alert("Registro exitoso");
 
-            localStorage.setItem("registroCompleto", "true");
+                // Guardar en localStorage que el usuario ya completó el registro
+                localStorage.setItem("registroCompleto", "true");
 
-            // Cerrar el modal y permitir ver la página
-            modal.style.display = "none";
-            document.body.classList.remove("modal-active");
-          })
-          .catch((error) => console.error("Error en el registro:", error));
-      });
-
-      // Verifica que el botón para cerrar el modal exista antes de agregar evento
-      let cerrarBtn = document.getElementById("cerrarModal");
-      if (cerrarBtn) {
-        cerrarBtn.addEventListener("click", function () {
-          modal.style.display = "none";
-          document.body.classList.remove("modal-active");
+                // Ocultar el modal y permitir ver la página
+                modal.style.display = "none";
+                document.body.classList.remove("modal-active");
+            })
+            .catch(error => console.error("Error en el registro:", error));
         });
-      } else {
-        console.error("No se encontró el botón cerrarModal.");
-      }
     }
 
-    // Solo cargar el modal si el usuario NO ha registrado sus datos
-    if (localStorage.getItem("registroCompleto") !== "true") {
-      cargarFormularioRegistro();
+    if (!localStorage.getItem("registroCompleto")) {
+        cargarFormularioRegistro();
     }
-  </script>
+</script>
 </html>

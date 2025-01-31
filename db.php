@@ -1,8 +1,8 @@
 <?php
-$servername = "localhost"; // Cambia esto si usas un servidor remoto
-$username = "root"; // Usuario de MySQL
-$password = ""; // Contraseña de MySQL
-$database = "servicios_angelicales";
+$servername = "localhost"; // Servidor (ajusta si es necesario)
+$username = "root"; // Usuario de la base de datos
+$password = ""; // Contraseña (déjala vacía si no tienes)
+$database = "servicios_angelicales"; // Nombre de la base de datos
 
 // Crear conexión
 $conn = new mysqli($servername, $username, $password, $database);
@@ -11,4 +11,5 @@ $conn = new mysqli($servername, $username, $password, $database);
 if ($conn->connect_error) {
     die("Conexión fallida: " . $conn->connect_error);
 }
+
 ?>

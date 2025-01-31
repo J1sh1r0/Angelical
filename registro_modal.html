@@ -203,6 +203,16 @@
             .catch((error) => console.error("Error en el registro:", error));
         });
 
+      document.addEventListener("DOMContentLoaded", function () {
+        let cerrarBtn = document.getElementById("cerrarModal");
+        if (cerrarBtn) {
+          cerrarBtn.addEventListener("click", function () {
+            document.getElementById("modalRegistro").style.display = "none";
+            document.body.classList.remove("modal-active");
+          });
+        }
+      });
+
       // Agregar botón para cerrar manualmente el modal
       document
         .getElementById("cerrarModal")
