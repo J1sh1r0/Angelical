@@ -87,16 +87,21 @@
         <!-- Usamos la rejilla de Bootstrap -->
         <div class="container">
             <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
-                
-                <!-- Oferta 1 -->
+                <!-- Paquete 1: Armonización Energética -->
                 <div class="col">
                     <div class="oferta">
                         <div class="imagen">
-                            <img src="Chakras/Chakras/AMARILLO.png" class="img-fluid" alt="Oferta 1">
+                            <img src="Chakras/Chakras/AMARILLO.png" class="img-fluid" alt="Paquete 1">
                         </div>
                         <div class="informacion">
-                            <h3>TITULO DE LA OFERTA 1</h3>
-                            <p>Descripción de la oferta 1. Aquí va más información sobre la oferta.</p>
+                            <h3>Paquete 1: Armonización Energética</h3>
+                            <p>Limpieza de Cuerpo Etéreo, 
+                                Alineación de Chakras y
+                                Sanación General <br>
+                                <br>
+                                Este paquete es ideal para desbloquear energía negativa, restaurar el flujo energético y equilibrar tus chakras.
+                                <br><br>Precio: $120
+                            </p>
                             <div class="text-center">
                                 <button class="btn btn-primary btn-adquirir" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
                             </div>
@@ -104,15 +109,22 @@
                     </div>
                 </div>
 
-                <!-- Oferta 2 -->
+                <!-- Paquete 2: Conexión Espiritual Profunda -->
                 <div class="col">
                     <div class="oferta">
                         <div class="imagen">
-                            <img src="Chakras/Chakras/AMARILLO.png" class="img-fluid" alt="Oferta 2">
+                            <img src="Chakras/Chakras/AMARILLO.png" class="img-fluid" alt="Paquete 2">
                         </div>
                         <div class="informacion">
-                            <h3>TITULO DE LA OFERTA 2</h3>
-                            <p>Descripción de la oferta 2. Aquí va más información sobre la oferta.</p>
+                            <h3>Paquete 2: Conexión Espiritual Profunda</h3>
+                            <p>Lectura de Cartas Angelicales, 
+                                Sanación a un Ser Fallecido y
+                                Polarización de Chakras <br>
+                                <br>
+                                Este paquete es perfecto para recibir guía espiritual, sanar a seres queridos que ya no están y equilibrar tus chakras.
+                                <br><br> 
+                                Precio: $150 <br>
+                            </p>
                             <div class="text-center">
                                 <button class="btn btn-primary btn-adquirir" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
                             </div>
@@ -120,15 +132,21 @@
                     </div>
                 </div>
 
-                <!-- Oferta 3 -->
+                <!-- Paquete 3: Sanación Integral -->
                 <div class="col">
                     <div class="oferta">
                         <div class="imagen">
-                            <img src="Chakras/Chakras/AMARILLO.png" class="img-fluid" alt="Oferta 3">
+                            <img src="Chakras/Chakras/AMARILLO.png" class="img-fluid" alt="Paquete 3">
                         </div>
                         <div class="informacion">
-                            <h3>TITULO DE LA OFERTA 3</h3>
-                            <p>Descripción de la oferta 3. Aquí va más información sobre la oferta.</p>
+                            <h3>Paquete 3: Sanación Integral</h3>
+                            <p>Limpieza de Cuerpo Etéreo, 
+                                Sanación General y
+                                Reconocimiento de Sistemas Dañados <br>
+                                <br>
+                                Un paquete completo para eliminar bloqueos energéticos, restaurar la energía del cuerpo y la mente, y corregir desequilibrios en los sistemas energéticos.
+                                <br><br>Precio: $180 <br>
+                            </p>
                             <div class="text-center">
                                 <button class="btn btn-primary btn-adquirir" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
                             </div>
@@ -136,15 +154,22 @@
                     </div>
                 </div>
 
-                <!-- Oferta 4 -->
+                <!-- Paquete 4: Restauración Espiritual Completa -->
                 <div class="col">
                     <div class="oferta">
                         <div class="imagen">
-                            <img src="Chakras/Chakras/AMARILLO.png" class="img-fluid" alt="Oferta 4">
+                            <img src="Chakras/Chakras/AMARILLO.png" class="img-fluid" alt="Paquete 4">
                         </div>
                         <div class="informacion">
-                            <h3>TITULO DE LA OFERTA 4</h3>
-                            <p>Descripción de la oferta 4. Aquí va más información sobre la oferta.</p>
+                            <h3>Paquete 4: Restauración Espiritual Completa</h3>
+                            <p>Polarización de Chakras, 
+                                Alineación de Chakras, 
+                                Sanación a un Ser Fallecido y
+                                Limpieza de Cuerpo Etéreo <br>
+                                <br> 
+                                El paquete más completo para restaurar tu ser espiritual, equilibrar chakras y sanar tanto personal como espiritualmente.
+                                <br><br>Precio: $220
+                            </p>
                             <div class="text-center">
                                 <button class="btn btn-primary btn-adquirir" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
                             </div>
@@ -222,3 +247,63 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
 </body>
 </html>
+
+<script>
+    // Objeto carrito para almacenar productos
+    let carrito = [];
+
+    // Función para agregar productos al carrito
+    function agregarAlCarrito(button) {
+        // Obtener los datos del producto
+        const nombreProducto = button.closest('.informacion').querySelector('h3').innerText;
+        const precioProducto = button.closest('.informacion').querySelector('p').innerText.split('Precio: $')[1];
+
+        // Verificar si el producto ya está en el carrito
+        const productoExistente = carrito.find(producto => producto.nombre === nombreProducto);
+        
+        if (productoExistente) {
+            // Si el producto ya está, eliminarlo
+            carrito = carrito.filter(producto => producto.nombre !== nombreProducto);
+
+            // Cambiar el estado del botón a "Agregar al carrito"
+            button.innerText = 'Agregar al carrito';
+            button.classList.remove('btn-agregado');
+            button.classList.add('btn-primary');
+            
+            // Mostrar mensaje de eliminación
+            mostrarMensaje('Se ha quitado un producto de su carrito.');
+        } else {
+            // Si no está en el carrito, agregarlo
+            carrito.push({
+                nombre: nombreProducto,
+                precio: precioProducto
+            });
+
+            // Cambiar el estado del botón a "Agregado"
+            button.innerText = 'Agregado';
+            button.classList.remove('btn-primary');
+            button.classList.add('btn-agregado');
+            
+            // Mostrar la barra de carrito si no está visible
+            document.getElementById('barraCarrito').style.display = 'block';
+            
+            // Mostrar mensaje de agregado
+            mostrarMensaje('¡Producto agregado al carrito!');
+        }
+
+        // Mostrar el carrito en la consola
+        console.log("Carrito:", carrito);
+    }
+
+    // Función para mostrar el mensaje cuando se agrega o quita un producto
+    function mostrarMensaje(mensaje) {
+        const mensajeElemento = document.getElementById('mensajeCarrito');
+        mensajeElemento.innerText = mensaje;
+        mensajeElemento.style.display = 'block';
+
+        // Ocultar el mensaje después de 2 segundos
+        setTimeout(function() {
+            mensajeElemento.style.display = 'none';
+        }, 2000);
+    }
+</script>
