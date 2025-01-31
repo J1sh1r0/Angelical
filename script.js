@@ -82,3 +82,4 @@ function toggleInfo(infoId) {
         serviceElement.classList.remove('active');
     }
 }
+

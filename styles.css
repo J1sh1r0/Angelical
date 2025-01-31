@@ -118,9 +118,9 @@ body {
 
 /* Estilo de la información de los servicios */
 .service-info {
-    display: none; /* Oculto por defecto */
-    opacity: 0; /* Inicialmente transparente */
-    transform: translateY(-20px); /* Inicialmente desplazado hacia arriba */
+    display: none;
+    opacity: 0;
+    transform: translateY(-20px);
     background: rgba(255, 255, 255, 0.2);
     color: white;
     padding: 15px;
@@ -130,7 +130,7 @@ body {
     margin-left: auto;
     margin-right: auto;
     font-size: 1.1rem;
-    transition: opacity 0.5s ease, transform 0.5s ease; /* Transición suave para opacidad y desplazamiento */
+    transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
 /* Estilo cuando la información se muestra */
@@ -139,7 +139,6 @@ body {
     opacity: 1; /* Totalmente visible */
     transform: translateY(0); /* Desplazado a su posición original */
 }
-
 
 .btn-primary {
     background: #d8b6ff;
@@ -202,7 +201,7 @@ video {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: linear-gradient(135deg, #a955f781, #3b1361); /* Degradado morado */
+    background: linear-gradient(135deg, #a955f781, #3b1361);
     color: white;
     border: none;
     cursor: pointer;
@@ -216,6 +215,7 @@ video {
     justify-content: center;
     width: 60px;
     height: 60px;
+    z-index: 999; /* Asegura que las flechas estén por encima de otros elementos */
 }
 
 .arrow i {
@@ -348,16 +348,19 @@ footer {
 
 /* Estilo para el contenedor de navegación */
 .nav-container {
-    background-color: rgba(112, 44, 71, 0.7);
+    background-color: rgba(112, 44, 71, 0.9); /* Fondo más opaco */
     padding: 10px 0;
     text-align: center;
     transition: background-color 0.3s;
-    position: fixed; /* Fija la barra en la parte superior */
-    top: 0; /* Posición en la parte superior de la pantalla */
-    width: 100%; /* Asegura que ocupe todo el ancho */
-    z-index: 10; /* Asegura que la barra quede por encima de otros elementos */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Sombra sutil para darle un efecto flotante */
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    display: flex; /* Asegurarse de que los elementos estén en una fila */
+    justify-content: center; /* Centrar los elementos de la barra */
 }
+
 
 /* Estilo para la lista de navegación */
 .nav-list {
@@ -428,6 +431,15 @@ footer {
     animation: blink 1s infinite; /* Animación de parpadeo */
 }
 
+@keyframes blink {
+    0%, 50%, 100% {
+        opacity: 1;
+    }
+    25%, 75% {
+        opacity: 0.6;
+    }
+}
+
 /* Detener el parpadeo y hacer que brille cuando se pasa el ratón sobre "Ofertas" */
 .nav-item a[href="oferta.html"]:hover {
     animation: none; /* Detenemos la animación de parpadeo */
@@ -436,15 +448,103 @@ footer {
     box-shadow: 0 0 25px #ff4081, 0 0 50px #ff4081, 0 0 75px #ff4081; /* Efecto de brillo */
 }
 
-/* Animación de parpadeo */
-@keyframes blink {
-    0% {
-        opacity: 1;
+/* Media Queries */
+@media screen and (max-width: 768px) {
+    /* Ajustar márgenes y tamaño de la fuente para móviles */
+    body {
+        margin-top: 40px;  /* Menos espacio arriba */
     }
-    50% {
-        opacity: 0.5;
+
+    header h1 {
+        font-size: 2.5em;  /* Reducción del tamaño de la fuente */
     }
-    100% {
-        opacity: 1;
+
+    .services {
+        width: 90%; /* Asegura que la sección de servicios se ajuste a la pantalla */
+        padding: 10px;
+    }
+
+    .service {
+        width: 120px;  /* Reducir el tamaño de los servicios */
+        height: 120px;
+    }
+
+    .btn-primary {
+        font-size: 1rem; /* Hacer los botones más pequeños en móviles */
+        padding: 8px 15px;
+    }
+
+    .video-section {
+        width: 90%;
+        max-width: 100%;
+        margin: 20px auto;
+        position: relative; /* Necesario para que las flechas se posicionen correctamente */
+    }
+
+    .video-container {
+        padding: 0; /* Eliminar padding */
+    }
+
+    /* Mover las flechas hacia abajo en pantallas pequeñas */
+    .arrow {
+        top: unset; /* Quitar la posición top */
+        bottom: 10px; /* Posicionar las flechas hacia la parte inferior */
+    }
+
+    .arrow.left {
+        left: 10px; /* Asegura que la flecha izquierda quede a la izquierda */
+    }
+
+    .arrow.right {
+        right: 10px; /* Asegura que la flecha derecha quede a la derecha */
+    }
+
+    /* Reducción de tamaño y disposición para íconos de navegación */
+    .arrow {
+        padding: 15px;
+        font-size: 24px;
+        width: 50px;
+        height: 50px;
+    }
+
+    .nav-container {
+        padding: 10px 0;
+    }
+
+    .nav-item {
+        margin: 0 15px;
+    }
+
+    /* Ajustar el tamaño de las imágenes en la oferta */
+    .imagen img {
+        width: 120px; /* Menor tamaño en móviles */
+        height: auto;
+        margin-right: 15px;
+    }
+
+    /* Ajustes en la información de cada oferta */
+    .oferta {
+        flex-direction: column; /* Cambiar la disposición para móviles */
+        text-align: center;
+    }
+
+    .oferta .informacion {
+        margin-top: 10px;
+        text-align: center;
+    }
+
+    footer {
+        font-size: 0.9rem; /* Ajustar el tamaño de fuente */
+    }
+
+    /* Menú de navegación en pantallas móviles */
+    .nav-list {
+        display: block;
+        padding: 0;
+        text-align: center;
+    }
+
+    .nav-item {
+        margin: 10px 0;
     }
 }

@@ -31,17 +31,17 @@
     <!-- Fondo Estrellado -->
     <div class="stars"></div>
 
-    <main class="container">
-        <section class="video-section text-center">
+    <section class="video-section text-center">
+        <div class="video-container">
+            <video id="videoPlayer" controls>
+                <source src="video1.mp4" type="video/mp4">
+                Tu navegador no soporta videos.
+            </video>
             <button class="arrow left" onclick="prevVideo()">&#10094;</button>
-            <div class="video-container">
-                <video id="videoPlayer" controls>
-                    <source src="video1.mp4" type="video/mp4">
-                    Tu navegador no soporta videos.
-                </video>
-            </div>
             <button class="arrow right" onclick="nextVideo()">&#10095;</button>
-        </section>
+        </div>
+   </section>
+   
 
         <section class="text-center p-4">
             <p class="persuasive-text">Nuestros servicios ayudan a desbloquear tu energía, sanar y equilibrar tu ser interior.</p>
@@ -170,7 +170,7 @@
     </section>
 
     <div class="text-center">
-        <a href="contacto.html" class="btn btn-primary">Más Info</a>
+        <a href="contacto.html" class="close-info">Más Info</a>
     </div>
 </main>
 
