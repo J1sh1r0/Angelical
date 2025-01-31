@@ -45,35 +45,40 @@ function toggleInfo(infoId) {
     const allInfos = document.querySelectorAll('.service-info');
     const allServices = document.querySelectorAll('.service');
     
-    // Ocultar la información de los otros servicios
-    allInfos.forEach(info => {
-        if (info.id !== infoId) {
-            info.classList.remove('show'); // Eliminar la clase 'show' para esconder la info
-            setTimeout(() => {
-                info.style.display = 'none'; // Escondemos con display 'none' después de la transición
-            }, 500); // Este tiempo debe coincidir con la duración de la transición
-        }
-    });
-
+    // Obtener el servicio y la información correspondiente
     const infoElement = document.getElementById(infoId);
-    const serviceElement = document.getElementById(infoId.replace('info', 'E')); // Obtener el div de servicio correspondiente
-    
-    // Alternar la visibilidad de la información
+    const serviceElement = document.getElementById(infoId.replace('info', 'E'));
+
+    // Si la información no está visible, mostrarla y ocultar el resto de los servicios
     if (!infoElement.classList.contains('show')) {
+        // Ocultar todos los servicios y mostrar solo el seleccionado
+        allServices.forEach(service => {
+            if (service !== serviceElement) {
+                service.style.display = 'none'; // Ocultar los otros servicios
+            }
+        });
+
+        // Mostrar la información correspondiente
         infoElement.style.display = 'block'; // Aseguramos que se muestre
         setTimeout(() => {
             infoElement.classList.add('show'); // Aplicamos la transición con la clase 'show'
         }, 10); // Retardamos para que la transición se vea
-        // Añadir el brillo solo al servicio seleccionado
-        allServices.forEach(service => {
-            service.classList.remove('active'); // Eliminar brillo de todos los demás
-        });
-        serviceElement.classList.add('active'); // Aplicar el brillo al servicio actual
+
+        // Activar el brillo del servicio seleccionado
+        serviceElement.classList.add('active');
     } else {
-        infoElement.classList.remove('show'); // Eliminar la clase 'show' para que se oculte
+        // Si la información ya está visible, ocultarla y volver a mostrar los servicios
+        infoElement.classList.remove('show');
         setTimeout(() => {
             infoElement.style.display = 'none'; // Escondemos con display 'none' después de la transición
-        }, 500); // Este tiempo debe coincidir con la duración de la transición
-        serviceElement.classList.remove('active'); // Eliminar el brillo del servicio
+        }, 500);
+
+        // Volver a mostrar todos los servicios
+        allServices.forEach(service => {
+            service.style.display = 'inline-block'; // Mostrar todos los servicios
+        });
+
+        // Desactivar el brillo del servicio
+        serviceElement.classList.remove('active');
     }
 }

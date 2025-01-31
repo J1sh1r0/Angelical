@@ -38,77 +38,152 @@
     <div class="stars"></div>
 
     <main class="container">
-        <!-- Sección de Testimonios -->
-        <section class="testimonials-section text-center my-5">
-            <h2>Testimonios</h2>
-            <p class="persuasive-text">Escucha las experiencias transformadoras de nuestros clientes.</p>
-            <div class="video-navigation">
-                <button class="arrow left" onclick="prevVideo()"></button>
-                <div class="video-container">
-                    <video id="videoPlayer" controls width="100%">
-                        <source src="video1.mp4" type="video/mp4">
-                        Tu navegador no soporta videos.
-                    </video>
-                </div>
-                <button class="arrow right" onclick="nextVideo()"></button>
+        <section class="video-section text-center">
+            <button class="arrow left" onclick="prevVideo()">&#10094;</button>
+            <div class="video-container">
+                <video id="videoPlayer" controls>
+                    <source src="video1.mp4" type="video/mp4">
+                    Tu navegador no soporta videos.
+                </video>
             </div>
+            <button class="arrow right" onclick="nextVideo()">&#10095;</button>
         </section>
 
-<!-- Sección de Servicios -->
-<section class="services text-center my-5">
-    <h2>Nuestros Servicios</h2>
-    <p class="persuasive-text">Nuestros servicios ayudan a desbloquear tu energía, sanar y equilibrar tu ser interior.</p>
-    <div class="service-container">
-        <div class="service" id="E1" onclick="toggleInfo('info1')">Limpieza de Cuerpo Etéreo</div>
-        <div class="service" id="E2" onclick="toggleInfo('info2')">Sanación</div>
-        <div class="service" id="E3" onclick="toggleInfo('info3')">Alineación</div>
-        <div class="service" id="E4" onclick="toggleInfo('info4')">Polarización de Chakras</div>
-        <div class="service" id="E5" onclick="toggleInfo('info5')">Sanación a un Ser Fallecido</div>
-        <div class="service" id="E6" onclick="toggleInfo('info6')">Lectura de Cartas Angelicales</div>
-        <div class="service" id="E7" onclick="toggleInfo('info7')">Reconocimiento de sistemas dañados</div>
-    </div>
+        <section class="text-center p-4">
+            <p class="persuasive-text">Nuestros servicios ayudan a desbloquear tu energía, sanar y equilibrar tu ser interior.</p>
+        </section>
 
+        <!-- Sección de Servicios -->
+        <section class="services text-center my-5">
+            <h2>Nuestros Servicios</h2>
+            <p class="persuasive-text">Nuestros servicios ayudan a desbloquear tu energía, sanar y equilibrar tu ser interior.</p>
+            <div class="service-container">
+                <div class="service" id="E1" onclick="toggleInfo('info1')">Limpieza de Cuerpo Etéreo</div>
+                <div class="service" id="E2" onclick="toggleInfo('info2')">Sanación</div>
+                <div class="service" id="E3" onclick="toggleInfo('info3')">Alineación</div>
+                <div class="service" id="E4" onclick="toggleInfo('info4')">Polarización de Chakras</div>
+                <div class="service" id="E5" onclick="toggleInfo('info5')">Sanación a un Ser Fallecido</div>
+                <div class="service" id="E6" onclick="toggleInfo('info6')">Lectura de Cartas Angelicales</div>
+                <div class="service" id="E7" onclick="toggleInfo('info7')">Reconocimiento de sistemas dañados</div>
+            </div>
+        
     <!-- Información adicional para cada servicio -->
     <div class="service-info" id="info1">
-        <strong>Limpieza de Cuerpo Etéreo:</strong> 
+        <strong>Limpieza de Cuerpo Etéreo:</strong>
         Elimina energías negativas y bloqueos energéticos, promoviendo un equilibrio y bienestar general.
+
+        <!-- Contenedor de Video -->
+        <div class="video-container" id="videoContainer1">
+            <video controls>
+                <source src="video1.mp4" type="video/mp4">
+                Tu navegador no soporta videos.
+            </video>
+        </div>
+
+        <button class="close-info" onclick="toggleInfo('info1')">Cerrar</button> <!-- Cerrar -->
     </div>
+
     <div class="service-info" id="info2">
         <strong>Sanación:</strong> 
         Terapia energética que restaura el flujo de energía en el cuerpo, ayudando a sanar a nivel físico y emocional.
+
+        <!-- Contenedor de Video -->
+        <div class="video-container" id="videoContainer2">
+            <video controls>
+                <source src="video1.mp4" type="video/mp4">
+                Tu navegador no soporta videos.
+            </video>
+        </div>
+
+        <button class="close-info" onclick="toggleInfo('info2')">Cerrar</button>
     </div>
+
     <div class="service-info" id="info3">
         <strong>Alineación:</strong> 
         Un proceso que asegura que todos los centros energéticos (chakras) estén equilibrados y alineados para optimizar la salud.
+
+        <!-- Contenedor de Video -->
+        <div class="video-container" id="videoContainer3">
+            <video controls>
+                <source src="video1.mp4" type="video/mp4">
+                Tu navegador no soporta videos.
+            </video>
+        </div>
+
+        <button class="close-info" onclick="toggleInfo('info3')">Cerrar</button>
     </div>
+
     <div class="service-info" id="info4">
         <strong>Polarización de Chakras:</strong> 
         Reequilibra los chakras para aumentar la armonía y energía positiva en el cuerpo y la mente.
+
+        <!-- Contenedor de Video -->
+        <div class="video-container" id="videoContainer4">
+            <video controls>
+                <source src="video1.mp4" type="video/mp4">
+                Tu navegador no soporta videos.
+            </video>
+        </div>
+
+        <button class="close-info" onclick="toggleInfo('info4')">Cerrar</button>
     </div>
+
     <div class="service-info" id="info5">
         <strong>Sanación a un Ser Fallecido:</strong> 
         Ayuda a liberar a los seres queridos fallecidos de energías atrapadas, promoviendo la paz y la trascendencia.
+
+        <!-- Contenedor de Video -->
+        <div class="video-container" id="videoContainer5">
+            <video controls>
+                <source src="video1.mp4" type="video/mp4">
+                Tu navegador no soporta videos.
+            </video>
+        </div>
+
+        <button class="close-info" onclick="toggleInfo('info5')">Cerrar</button>
     </div>
+
     <div class="service-info" id="info6">
         <strong>Lectura de Cartas Angelicales:</strong> 
         Una consulta espiritual que ofrece guía, consuelo y respuestas a través de la sabiduría de los ángeles.
+
+        <!-- Contenedor de Video -->
+        <div class="video-container" id="videoContainer6">
+            <video controls>
+                <source src="video1.mp4" type="video/mp4">
+                Tu navegador no soporta videos.
+            </video>
+        </div>
+
+        <button class="close-info" onclick="toggleInfo('info6')">Cerrar</button>
     </div>
+
     <div class="service-info" id="info7">
         <strong>Reconocimiento de sistemas dañados:</strong> 
         Identifica bloqueos o fallos en los sistemas energéticos, buscando soluciones para restaurar el bienestar.
-    </div>
-</section>
 
-
-        <div class="text-center">
-            <a href="contacto.html" class="btn btn-primary">Más Info</a>
+        <!-- Contenedor de Video -->
+        <div class="video-container" id="videoContainer7">
+            <video controls>
+                <source src="video1.mp4" type="video/mp4">
+                Tu navegador no soporta videos.
+            </video>
         </div>
-    </main>
 
-    <!-- Pie de página -->
-    <footer class="text-center p-3">
-        <p>&copy; 2025 Servicios Angelicales - Todos los derechos reservados</p>
-    </footer>
+        <button class="close-info" onclick="toggleInfo('info7')">Cerrar</button>
+    </div>
+
+    </section>
+
+    <div class="text-center">
+        <a href="contacto.html" class="btn btn-primary">Más Info</a>
+    </div>
+</main>
+
+<!-- Pie de página -->
+<footer class="text-center p-3">
+    <p>&copy; 2025 Servicios Angelicales - Todos los derechos reservados</p>
+</footer>
 
     <script src="script.js"></script> <!-- Enlace al archivo JS -->
 </body>
