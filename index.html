@@ -106,5 +106,24 @@
     </footer>
 
     <script src="script.js"></script> <!-- Enlace al archivo JS -->
+
+    <script>
+        // Función para cargar el modal desde el archivo externo
+        function cargarFormularioRegistro() {
+            fetch("registro_modal.html")
+                .then(response => response.text())
+                .then(data => {
+                    let div = document.createElement("div");
+                    div.innerHTML = data;
+                    document.body.appendChild(div);
+                })
+                .catch(error => console.error("Error al cargar el formulario:", error));
+        }
+    
+        // Cargar el formulario si el usuario no ha completado el registro
+        if (!localStorage.getItem("registroCompleto")) {
+            cargarFormularioRegistro();
+        }
+    </script>
 </body>
 </html>
