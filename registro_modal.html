@@ -180,7 +180,7 @@
       document
         .getElementById("registroForm")
         .addEventListener("submit", function (event) {
-          event.preventDefault(); // Evitar que la página se recargue
+          event.preventDefault(); // Evitar que se recargue la página
 
           let formData = new FormData(this);
 
@@ -188,30 +188,24 @@
             method: "POST",
             body: formData,
           })
-            .then((response) => response.text())
+            .then((response) => response.json()) // Asegúrate de que la respuesta es JSON
             .then((data) => {
-              console.log(data); // Depuración: Ver respuesta del servidor en consola
-              alert("Registro exitoso");
+              console.log("Respuesta del servidor:", data); // Ver respuesta en la consola
 
-              // Guardar en localStorage que el usuario ya completó el formulario
-              localStorage.setItem("registroCompleto", "true");
+              if (data.success) {
+                alert(data.message); // Mostrar mensaje de éxito
+                localStorage.setItem("registroCompleto", "true");
 
-              // Cerrar el modal y permitir ver la página
-              document.getElementById("modalRegistro").style.display = "none";
-              document.body.classList.remove("modal-active");
+                document.getElementById("modalRegistro").style.display = "none";
+                document.body.classList.remove("modal-active");
+              } else {
+                alert("Error: " + data.message); // Mostrar error si algo falla
+              }
             })
-            .catch((error) => console.error("Error en el registro:", error));
+            .catch((error) => {
+              console.error("Error en el registro:", error); // Mostrar errores en la consola
+            });
         });
-
-      document.addEventListener("DOMContentLoaded", function () {
-        let cerrarBtn = document.getElementById("cerrarModal");
-        if (cerrarBtn) {
-          cerrarBtn.addEventListener("click", function () {
-            document.getElementById("modalRegistro").style.display = "none";
-            document.body.classList.remove("modal-active");
-          });
-        }
-      });
 
       // Agregar botón para cerrar manualmente el modal
       document

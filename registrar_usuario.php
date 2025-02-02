@@ -1,4 +1,5 @@
 <?php
+file_put_contents('debug_log.txt', print_r($_POST, true), FILE_APPEND);
 header("Content-Type: application/json"); // Asegurar que se devuelve JSON
 include 'db.php'; // Incluir la conexión a la base de datos
 
