@@ -6,6 +6,7 @@ body {
     color: #ddd;
     text-align: center;
     position: relative;
+    margin-top: 60px; /* Deja espacio para que el contenido no quede cubierto por la barra fija */
 }
 
 /* Fondo estrellado animado */
@@ -66,11 +67,28 @@ body {
     linear-gradient(rgba(26, 255, 0, 0.3), rgba(0, 0, 0, 0.3));
 }
 
+#E1, #E2, #E3, #E4, #E5, #E6, #E7 {
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* Sección Testimonios */
+.testimonios {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.testimonios h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5em;
+    color: #ff69b4; /* Color rosa claro para destacar */
+}
+
 /* Sección de Servicios */
 .services {
-    padding: 20px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 20px;
+    padding: 60px 0;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
     margin-top: 20px;
     box-shadow: 0 5px 10px rgba(255, 255, 255, 0.2);
     display: flex;
@@ -83,56 +101,276 @@ body {
     margin-right: auto;
 }
 
+.services h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5em;
+    color: #ff69b4; /* Rosa claro para los títulos */
+    margin-bottom: 30px;
+}
+
+.persuasive-text {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.7em;
+    color: #fff;
+}
+
 .service-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 15px;
+    gap: 38px;
 }
 
 .service {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1em;
+    color: #fff; /* Amarillo dorado */
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    margin: 10px;
+    border-radius: 50%; /* Forma circular */
     width: 150px;
     height: 150px;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    background-size: contain;
+    background-position: center;
+    font-weight: bold;
+    text-align: center;
+    position: relative;
+}
+
+.service:hover {
+    background-color: rgba(255, 105, 180, 0.7); /* Rosa claro */
+}
+
+/* Agregar efecto de brillo a los divs cuando están activos */
+.service.active {
+    filter: brightness(1.5); /* Aumenta el brillo */
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.6); /* Agrega un sutil resplandor */
+}
+
+/* Estilo de la información de los servicios */
+.service-info {
+    font-family: 'Poppins', sans-serif;
+    background-color: rgba(22, 21, 21, 0.8);
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+    display: none;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(0px);
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.2rem;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    min-height: 250px; /* Mantiene un tamaño constante */
+    position: absolute; /* Evita que afecte el flujo del documento */
+    width: 100%; /* Ajusta el ancho */
+    left: 0;
+}
+
+/* Estilo cuando la información se muestra */
+.service-info.show {
+    display: block; /* Aseguramos que se muestre */
+    opacity: 1; /* Totalmente visible */
+    transform: translateY(0); /* Desplazado a su posición original */
+    position: relative;
+}
+
+.service-info strong {
+    font-size: 1.2em;
+    color: #ff69b4;
+}
+
+.close-info {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #bd3476;
+    color: #fff;
+    border-radius: 40px;
+    text-decoration: none;
+}
+
+.close-info:hover {
+    background-color: #ff1493;
+}
+
+.btn-contacto {
+    display: inline-block;
+    background: linear-gradient(135deg, #ff1493, #ff69b4); /* Degradado rosa vibrante */
+    color: white;
+    font-size: 1.3em;
+    font-weight: bold;
+    padding: 15px 30px;
+    border-radius: 50px; /* Bordes redondeados */
+    text-decoration: none;
+    box-shadow: 0 0 15px rgba(255, 20, 147, 0.7);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-contacto:hover {
+    transform: scale(1.1); /* Efecto de agrandado */
+    box-shadow: 0 0 25px rgba(255, 20, 147, 1);
+    background: linear-gradient(135deg, #ff69b4, #ff1493);
+}
+
+.video-section {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-size: contain;
-    background-position: center;
-    border-radius: 50%;
-    box-shadow: 0 5px 10px rgba(255, 255, 255, 0.2);
-    font-size: 1rem;
-    font-weight: bold;
-    color: white;
-    text-align: center;
-    transition: 0.3s;
+    width: 80%;
+    max-width: 700px;
+    margin: 30px auto;
+    padding: 0px;
+    
+    border: 4px solid #ffa9c689;; /* Morado neón */
+    /* border: 4px solid rgba(255, 251, 6, 0.507);  Morado neón */
+    border-radius: 15px;
+    box-shadow: 0 0 15px #ffa9c5;; /* Brillo neón */
+    /*box-shadow: 0 0 15px rgba(246, 255, 0, 0.8);  Brillo neón */
+    background-color: rgba(10, 0, 43, 0.8); /* Fondo oscuro */
 }
 
-.btn-primary {
-    background: #d8b6ff;
-    border: none;
-    font-size: 1.2rem;
-    padding: 10px 20px;
-    border-radius: 5px;
-    transition: 0.3s;
-    color: white;
-    text-transform: uppercase;
-    font-weight: bold;
+.video-container {
+    position: relative;
+    width: 100%;
+    /* padding: 10px; */
+}
+
+video {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Carrusel */
+.video-carousel-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     margin-top: 20px;
 }
 
-.btn-primary:hover {
-    background: #c59bff;
+.video-frame {
+    width: 80%;
+    max-width: 700px;
+    border: 4px solid #ff69b4;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(255, 20, 147, 0.7);
+    overflow: hidden;
 }
 
-footer {
-    background: #3b1e5a;
+.video-frame video {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.video-carousel {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Alinea las flechas a los bordes */
+    margin-top: 20px;
+    gap: 15px;
+    position: relative;
+}
+
+.carousel-container {
+    display: flex;
+    overflow-x: auto;
+    gap: 10px;
+    padding: 10px;
+    max-width: 600px;
+    scroll-behavior: smooth;
+    flex: 1; /* Ocupa el espacio disponible */
+}
+
+.video-thumbnail {
+    width: 120px;
+    height: 80px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0.7;
+}
+
+.video-thumbnail:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(255, 105, 180, 0.7);
+    opacity: 1;
+}
+
+.video-thumbnail.active {
+    border: 3px solid #ff69b4;
+    opacity: 1;
+}
+
+.arrow {
+    background: linear-gradient(135deg, #ff1493, #ff69b4);
     color: white;
-    padding: 20px 0;
-    margin-top: 40px;
-    font-size: 1rem;
-    letter-spacing: 1px;
+    border: none;
+    cursor: pointer;
+    padding: 15px;
+    font-size: 20px;
+    border-radius: 50%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative; /* Cambiado a relative */
+    z-index: 10;
 }
 
+.arrow:hover {
+    transform: scale(1.2);
+    box-shadow: 0 0 15px rgba(255, 105, 180, 1);
+}
+
+.arrow.left {
+    left: 10px;
+}
+
+.arrow.right {
+    right: 10px;
+}
+
+/* Media Queries para Responsividad */
+@media (max-width: 768px) {
+    .video-frame {
+        max-width: 100%;
+        width: 90%;
+    }
+
+    .carousel-container {
+        max-width: 100%;
+        padding: 10px;
+    }
+
+    .video-thumbnail {
+        width: 100px;
+        height: 70px;
+    }
+}
+
+@media (max-width: 480px) {
+    .video-thumbnail {
+        width: 80px;
+        height: 60px;
+    }
+
+    .video-frame video {
+        max-width: 100%;
+    }
+}
+
+/* Ofertas */
 .oferta-container {
     padding: 20px;
     background: rgba(255, 255, 255, 0.1);
@@ -151,25 +389,6 @@ footer {
 }
 
 /* Estilo para cada oferta */
-.oferta {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 20px;
-    background-color: rgba(255, 255, 255, 0.3); /* Fondo semi-transparente */
-    padding: 15px;
-    border-radius: 10px;
-    width: 100%;
-}
-
-/* Estilo para la imagen dentro de cada oferta */
-.imagen img {
-    width: 150px; /* Ajusta el tamaño de la imagen */
-    height: auto;
-    border-radius: 8px; /* Borde redondeado */
-    margin-right: 20px; /* Espacio entre la imagen y el texto */
-}
 
 /* Estilo para el bloque de información */
 .informacion {
@@ -189,16 +408,12 @@ footer {
 
 .informacion button {
     padding: 10px 20px;
-    background-color: #007BFF; /* Fondo azul */
+    background-color: purple; /* Fondo azul */
     color: white;
     border: none;
     border-radius: 4px; /* Borde redondeado */
     cursor: pointer;
     transition: background-color 0.3s ease; /* Transición suave para hover */
-}
-
-.informacion button:hover {
-    background-color: #0056b3; /* Cambio de color al hacer hover */
 }
 
 header {
@@ -212,13 +427,16 @@ header {
 }
 
 header h1 {
-    font-size: 4em;
+    font-size: 4.5em;
     margin: 0;
-    background: linear-gradient(90deg, #b46682, #ffbed4, #e1b6e1); /* Tonos rosa y lila */
+    font-family: 'Dancing Script', cursive;
+    background: linear-gradient(90deg, #ff8c00, #ff1493, #8a2be2); /* Degradado más llamativo */
     background-clip: text;
+    -webkit-background-clip: text;
     color: transparent;
     text-align: center;
-    font-family: 'Dancing Script', cursive;
+    text-shadow: 2px 2px 10px rgba(255, 20, 147, 0.5); /* Brillo sutil */
+    letter-spacing: 2px;
 }
 
 footer {
@@ -233,11 +451,19 @@ footer {
 
 /* Estilo para el contenedor de navegación */
 .nav-container {
-    background-color: rgba(112, 44, 71, 0.7);
+    background-color: rgba(112, 44, 71, 0.9); /* Fondo más opaco */
     padding: 10px 0;
     text-align: center;
     transition: background-color 0.3s;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    display: flex; /* Asegurarse de que los elementos estén en una fila */
+    justify-content: center; /* Centrar los elementos de la barra */
 }
+
 
 /* Estilo para la lista de navegación */
 .nav-list {
@@ -252,15 +478,148 @@ footer {
     margin: 0 20px;
 }
 
-/* Estilo para los enlaces */
+/* Estilo general para los links */
 .nav-link {
-    color: #fff;
+    color: #ffffff;
     text-decoration: none;
+    font-weight: 400;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
     font-size: 18px;
-    transition: color 0.3s;
 }
 
-/* Cambio de color del texto al pasar el cursor sobre los enlaces */
+/* Efecto cuando el mouse pasa sobre los enlaces */
 .nav-link:hover {
-    color: #ffbf00; /* Color amarillo dorado */
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #ffa9c6;
 }
+
+/* Efecto parpadeante para el enlace de "Ofertas" */
+.nav-item a[href="oferta.html"] {
+    background: #ff4081;
+    color: #fff;
+    font-weight: bold;
+    padding: 12px 24px;
+    border-radius: 20px;
+    animation: blink 1s infinite; /* Animación de parpadeo */
+}
+
+@keyframes blink {
+    0%, 50%, 100% {
+        opacity: 1;
+    }
+    25%, 75% {
+        opacity: 0.6;
+    }
+}
+
+/* Detener el parpadeo y hacer que brille cuando se pasa el ratón sobre "Ofertas" */
+.nav-item a[href="oferta.html"]:hover {
+    animation: none; /* Detenemos la animación de parpadeo */
+    background: #ff80ab; /* Cambia el fondo */
+    color: #fff; /* Mantener el texto blanco */
+    box-shadow: 0 0 25px #ff4081, 0 0 50px #ff4081, 0 0 75px #ff4081; /* Efecto de brillo */
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+    /* Ajustar márgenes y tamaño de la fuente para móviles */
+    body {
+        margin-top: 40px;  /* Menos espacio arriba */
+    }
+
+    header h1 {
+        font-size: 2.5em;  /* Reducción del tamaño de la fuente */
+    }
+
+    .services {
+        width: 90%; /* Asegura que la sección de servicios se ajuste a la pantalla */
+        padding: 10px;
+    }
+
+    .service {
+        width: 120px;  /* Reducir el tamaño de los servicios */
+        height: 120px;
+    }
+
+    .btn-primary {
+        font-size: 1rem; /* Hacer los botones más pequeños en móviles */
+        padding: 8px 15px;
+    }
+
+    .video-section {
+        width: 90%;
+        max-width: 100%;
+        margin: 20px auto;
+        position: relative; /* Necesario para que las flechas se posicionen correctamente */
+    }
+
+    .video-container {
+        padding: 0; /* Eliminar padding */
+    }
+
+    /* Mover las flechas hacia abajo en pantallas pequeñas */
+    .arrow {
+        position: absolute; /* Asegúrate de que tenga una posición relativa o absoluta */
+        bottom: -50px; /* Ajusta el valor según lo necesites (más bajo si es necesario) */
+    }  
+
+    .arrow.left {
+        left: 0px; /* Asegura que la flecha izquierda quede a la izquierda */
+    }
+
+    .arrow.right {
+        right: 0px; /* Asegura que la flecha derecha quede a la derecha */
+    }
+
+    /* Reducción de tamaño y disposición para íconos de navegación */
+    .arrow {
+        padding: 15px;
+        font-size: 24px;
+        width: 50px;
+        height: 50px;
+    }
+
+    .nav-container {
+        padding: 10px 0;
+    }
+
+    .nav-item {
+        margin: 0 15px;
+    }
+
+    /* Ajustar el tamaño de las imágenes en la oferta */
+    .imagen img {
+        width: 120px; /* Menor tamaño en móviles */
+        height: auto;
+        margin-right: 15px;
+    }
+
+    /* Ajustes en la información de cada oferta */
+    .oferta {
+        flex-direction: column; /* Cambiar la disposición para móviles */
+        text-align: center;
+    }
+
+    .oferta .informacion {
+        margin-top: 10px;
+        text-align: center;
+    }
+
+    footer {
+        font-size: 0.9rem; /* Ajustar el tamaño de fuente */
+    }
+
+    /* Menú de navegación en pantallas móviles */
+    .nav-list {
+        display: block;
+        padding: 0;
+        text-align: center;
+    }
+
+    .nav-item {
+        margin: 10px 0;
+    }
+}
+

@@ -1,39 +1,187 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Paga - Servicios Angelicales</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Dancing+Script&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <style>
+/* Estilos para el fondo estrellado */
+.stars {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://example.com/stars-background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    z-index: -1;
+}
+
+/* Títulos */
+.pago-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #ffffff;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+/* Estilo para el logo de PayPal */
+.paypal-logo {
+    width: 35px; /* Tamaño ajustado del logo */
+    vertical-align: middle; /* Alinea el logo con el texto */
+    margin-left: 10px; /* Espaciado entre el texto y el logo */
+}
+
+/* Estilo general para la palabra PayPal */
+.paypal-text {
+    font-family: 'Poppins', sans-serif; /* Fuente similar al logo de PayPal */
+    font-weight: 700; /* Peso de la fuente similar al logo */
+    font-size: 2.5rem; /* Tamaño grande para destacarse */
+    letter-spacing: 2px; /* Espaciado entre letras */
+}
+
+/* Color y estilo para la parte "Pay" */
+.paypal-pay {
+    color: #0070ba; /* Azul oscuro para "Pay" */
+}
+
+/* Color y estilo para la parte "Pal" */
+.paypal-pal {
+    color: #009cde; /* Azul más claro para "Pal" */
+}
+
+.pago-resumen-title, .pago-card-title {
+    font-size: 1.5rem;
+    color: #fff;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.pago-card-price {
+    font-size: 1.3rem;
+    color: #f1c40f;
+    font-weight: bold;
+}
+
+/* Layout y tarjetas */
+.pago-layout {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.pago-resumen, .pago-container {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.pago-card {
+    padding: 20px;
+    background-color: purple;
+    color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.pago-card:hover {
+    transform: scale(1.05);
+}
+
+.paypal-btn {
+    background-color: #27ae60;
+    border: none;
+    padding: 15px;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    display: block;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.paypal-btn:hover {
+    background-color: #2ecc71;
+}
+
+/* Resumen de compra */
+.pago-resumen-title {
+    color: #333; /* Gris oscuro para los títulos */
+}
+
+.pago-resumen-description {
+    color: #555; /* Gris claro para la descripción */
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .pago-layout {
+        flex-direction: column;
+    }
+}
+    </style>
 </head>
+
+<header class="text-center p-4">
+    <h1 class="persuasive">Sanación y Equilibrio Espiritual</h1>
+    <p class="subtitle">Descubre el poder de la energía y transforma tu vida</p>
+</header>
+
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-            <a class="navbar-brand" href="#">Servicios Angelicales</a>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="oferta.html">Oferta</a></li>
-                    <li class="nav-item"><a class="nav-link" href="pago.html">Paga</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
-                </ul>
-            </div>
-        </div>
+    <nav class="nav-container">
+        <ul class="nav-list">
+            <li class="nav-item">
+                <a href="index.html" class="nav-link">Inicio</a>
+            </li>
+            <li class="nav-item">
+                <a href="oferta.html" class="nav-link">Ofertas</a>
+            </li>
+            <li class="nav-item">
+                <a href="contacto.html" class="nav-link">Contacto</a>
+            </li>
+        </ul>
     </nav>
 
-    <section id="pago" class="section">
-        <h2>Página de Paga</h2>
-        <p>Realiza tu pago de manera segura con PayPal.</p>
-        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
-            <input type="hidden" name="cmd" value="_s-xclick">
-            <input type="hidden" name="hosted_button_id" value="YOUR_BUTTON_ID">
-            <button type="submit" class="btn btn-primary">Pagar con PayPal</button>
-        </form>
-    </section>
+    <!-- Fondo Estrellado -->
+    <div class="stars"></div>
+
+    <section id="pago" class="pago-section">
+        <div class="container">
+            <h2 class="pago-title text-center mb-4">
+                Paga con <span class="paypal-text"><img src="https://www.paypalobjects.com/webstatic/icon/pp258.png" alt="PayPal Logo" class="paypal-logo"> <span class="paypal-pay">Pay</span><span class="paypal-pal">Pal</span></span>
+            </h2>
+            
+            <!-- Usamos d-flex y justify-content-center para centrar las cajas -->
+            <div class="row d-flex justify-content-center pago-layout">
+                <!-- Sección izquierda: Resumen de compra -->
+                <div class="col-md-6 pago-resumen p-4 bg-light rounded shadow-sm">
+                    <h3 class="pago-resumen-title">Resumen de Compra</h3>
+                    <p class="pago-resumen-description">Aquí aparecerá la descripción del servicio seleccionado en la sección de ofertas.</p>
+                </div>
+    
+                <!-- Sección derecha: Pago con PayPal -->
+                <div class="col-md-6 pago-container p-4 bg-white rounded shadow-sm">
+                    <div class="pago-card">
+                        <h3 class="pago-card-title">Servicio de Sanación</h3>
+                        <p class="pago-card-price">$100.00 MXN</p>
+                        <a href="https://www.paypal.com/paypalme/tucuenta/100.00" target="_blank" rel="noopener" class="paypal-btn btn btn-primary btn-lg w-100 mt-3">Pagar con PayPal</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>    
 
     <footer>
         <p>&copy; 2025 Servicios Angelicales. Todos los derechos reservados.</p>
     </footer>
+    <script src="script.js"></script>
 </body>
 </html>

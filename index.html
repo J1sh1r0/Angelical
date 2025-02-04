@@ -11,68 +11,173 @@
 </head>
 <body>
     <!-- Header con el título y el subtítulo -->
-    <header class="text-center p-4" >
+    <header class="text-center p-4">
         <h1 class="persuasive">Sanación y Equilibrio Espiritual</h1>
         <p class="subtitle">Descubre el poder de la energía y transforma tu vida</p>
     </header>
 
-<!-- Menú de navegación integrado debajo del header -->
-<nav class="nav-container">
-    <ul class="nav-list">
-        <li class="nav-item">
-            <a href="index.html" class="nav-link">Inicio</a>
-        </li>
-        <li class="nav-item">
-            <a href="oferta.html" class="nav-link">Ofertas</a>
-        </li>
-        <li class="nav-item">
-            <a href="pago.html" class="nav-link">Pago</a>
-        </li>
-        <li class="nav-item">
-            <a href="contacto.html" class="nav-link">Contacto</a>
-        </li>
-    </ul>
-</nav>
+    <!-- Menú de navegación integrado debajo del header -->
+    <nav class="nav-container">
+        <ul class="nav-list">
+            <li class="nav-item">
+                <a href="oferta.html" class="nav-link">Ofertas</a>
+            </li>
+            <li class="nav-item">
+                <a href="contacto.html" class="nav-link">Contacto</a>
+            </li>
+        </ul>
+    </nav>
 
     <!-- Fondo Estrellado -->
     <div class="stars"></div>
 
-    <main class="container">
-        <!-- Sección de Testimonios -->
-        <section class="testimonials-section text-center my-5">
-            <h2>Testimonios</h2>
-            <p class="persuasive-text">Escucha las experiencias transformadoras de nuestros clientes.</p>
-            <div class="video-navigation">
-                <button class="arrow left" onclick="prevVideo()"></button>
-                <div class="video-container">
-                    <video id="videoPlayer" controls width="100%">
-                        <source src="video1.mp4" type="video/mp4">
-                        Tu navegador no soporta videos.
-                    </video>
-                </div>
-                <button class="arrow right" onclick="nextVideo()"></button>
-            </div>
-        </section>
+    <!-- Sección Testimonios -->
+    <section class="testimonios">
+        <h2>Testimonios</h2>
+        <p>Lo que nuestros clientes dicen sobre nosotros.</p>
+        <!-- Aquí iría el carrusel de testimonios -->
+    </section>
 
-        <!-- Sección de Servicios -->
-        <section class="services text-center my-5">
-            <h2>Nuestros Servicios</h2>
-            <p class="persuasive-text">Nuestros servicios ayudan a desbloquear tu energía, sanar y equilibrar tu ser interior.</p>
-            <div class="service-container">
-                <div class="service" id="E1">Limpieza de Cuerpo Etéreo</div>
-                <div class="service" id="E2">Sanación</div>
-                <div class="service" id="E3">Alineación</div>
-                <div class="service" id="E4">Polarización de Chakras</div>
-                <div class="service" id="E5">Sanación a un Ser Fallecido</div>
-                <div class="service" id="E6">Lectura de Cartas Angelicales</div>
-                <div class="service" id="E7">Reconocimiento de sistemas dañados</div>
-            </div>
-        </section>
-
-        <div class="text-center">
-            <a href="contacto.html" class="btn btn-primary">Más Info</a>
+    <!-- Sección de Carrusel -->
+    <div class="video-carousel-container">
+        <div class="video-frame">
+            <video id="mainVideo" controls autoplay>
+                <source src="Video1.mp4" type="video/mp4">
+                Tu navegador no soporta videos.
+            </video>
         </div>
-    </main>
+    
+        <section class="video-carousel text-center">
+            <button class="arrow left" onclick="prevVideo()">⭅</button>
+            <div class="carousel-container" id="carouselContainer">
+                <video src="Video1.mp4" onclick="selectVideo(this)" class="video-thumbnail active"></video>
+                <video src="Video2.mp4" onclick="selectVideo(this)" class="video-thumbnail"></video>
+                <video src="Video3.mp4" onclick="selectVideo(this)" class="video-thumbnail"></video>
+                <video src="Video4.mp4" onclick="selectVideo(this)" class="video-thumbnail"></video>
+            </div>
+            <button class="arrow right" onclick="nextVideo()">⭆</button>
+        </section>
+    </div>      
+    <br>
+
+    <!-- Sección de Servicios -->
+    <section class="services text-center my-5">
+        <h2>Nuestros Servicios</h2>
+        <p class="persuasive-text">Nuestros servicios ayudan a desbloquear tu energía, sanar y equilibrar tu ser interior.</p>
+        <div class="service-container">
+            <div class="service" id="E1" onclick="toggleInfo('info1')">Limpieza de Cuerpo Etéreo</div>
+            <div class="service" id="E2" onclick="toggleInfo('info2')">Sanación</div>
+            <div class="service" id="E3" onclick="toggleInfo('info3')">Alineación</div>
+            <div class="service" id="E4" onclick="toggleInfo('info4')">Polarización de Chakras</div>
+            <div class="service" id="E5" onclick="toggleInfo('info5')">Sanación a un Ser Fallecido</div>
+            <div class="service" id="E6" onclick="toggleInfo('info6')">Lectura de Cartas Angelicales</div>
+            <div class="service" id="E7" onclick="toggleInfo('info7')">Reconocimiento de sistemas dañados</div>
+        </div>
+
+    <!-- Información adicional para cada servicio -->
+    <div class="service-info" id="info1">
+        <strong>Limpieza de Cuerpo Etéreo:</strong>
+        Elimina energías negativas y bloqueos energéticos, promoviendo un equilibrio y bienestar general.
+
+        <div class="video-container" id="videoContainer1">
+            <video controls>
+                <source src="video1.mp4" type="video/mp4">
+                Tu navegador no soporta videos.
+            </video>
+        </div>
+
+        <button class="close-info" onclick="toggleInfo('info1')">Cerrar</button>
+    </div>
+
+    <div class="service-info" id="info2">
+        <strong>Sanación:</strong> 
+        Terapia energética que restaura el flujo de energía en el cuerpo, ayudando a sanar a nivel físico y emocional.
+
+        <div class="video-container" id="videoContainer2">
+            <video controls>
+                <source src="video1.mp4" type="video/mp4">
+                Tu navegador no soporta videos.
+            </video>
+        </div>
+
+        <button class="close-info" onclick="toggleInfo('info2')">Cerrar</button>
+    </div>
+
+    <div class="service-info" id="info3">
+        <strong>Alineación:</strong> 
+        Un proceso que asegura que todos los centros energéticos (chakras) estén equilibrados y alineados para optimizar la salud.
+
+        <div class="video-container" id="videoContainer3">
+            <video controls>
+                <source src="video1.mp4" type="video/mp4">
+                Tu navegador no soporta videos.
+            </video>
+        </div>
+
+        <button class="close-info" onclick="toggleInfo('info3')">Cerrar</button>
+    </div>
+
+    <div class="service-info" id="info4">
+        <strong>Polarización de Chakras:</strong> 
+        Reequilibra los chakras para aumentar la armonía y energía positiva en el cuerpo y la mente.
+
+        <div class="video-container" id="videoContainer4">
+            <video controls>
+                <source src="video1.mp4" type="video/mp4">
+                Tu navegador no soporta videos.
+            </video>
+        </div>
+
+        <button class="close-info" onclick="toggleInfo('info4')">Cerrar</button>
+    </div>
+
+    <div class="service-info" id="info5">
+        <strong>Sanación a un Ser Fallecido:</strong> 
+        Ayuda a liberar a los seres queridos fallecidos de energías atrapadas, promoviendo la paz y la trascendencia.
+
+        <div class="video-container" id="videoContainer5">
+            <video controls>
+                <source src="video1.mp4" type="video/mp4">
+                Tu navegador no soporta videos.
+            </video>
+        </div>
+
+        <button class="close-info" onclick="toggleInfo('info5')">Cerrar</button>
+    </div>
+
+    <div class="service-info" id="info6">
+        <strong>Lectura de Cartas Angelicales:</strong> 
+        Una consulta espiritual que ofrece guía, consuelo y respuestas a través de la sabiduría de los ángeles.
+
+        <div class="video-container" id="videoContainer6">
+            <video controls>
+                <source src="video1.mp4" type="video/mp4">
+                Tu navegador no soporta videos.
+            </video>
+        </div>
+
+        <button class="close-info" onclick="toggleInfo('info6')">Cerrar</button>
+    </div>
+
+    <div class="service-info" id="info7">
+        <strong>Reconocimiento de sistemas dañados:</strong> 
+        Identifica bloqueos o fallos en los sistemas energéticos, buscando soluciones para restaurar el bienestar.
+
+        <div class="video-container" id="videoContainer7">
+            <video controls>
+                <source src="video1.mp4" type="video/mp4">
+                Tu navegador no soporta videos.
+            </video>
+        </div>
+
+        <button class="close-info" onclick="toggleInfo('info7')">Cerrar</button>
+    </div>
+
+    </section>
+
+    <div class="text-center">
+        <a href="contacto.html" class="btn-contacto">¡Reserva tu Sesión Ahora!</a>
+    </div>    
 
     <!-- Pie de página -->
     <footer class="text-center p-3">
@@ -80,5 +185,40 @@
     </footer>
 
     <script src="script.js"></script>
+    <script>
+        const carouselContainer = document.getElementById('carouselContainer');
+const mainVideo = document.getElementById('mainVideo');
+const thumbnails = document.querySelectorAll('.video-thumbnail');
+let currentIndex = 0;
+
+function updateCarousel() {
+    thumbnails.forEach((video, index) => {
+        video.classList.toggle('active', index === currentIndex);
+    });
+}
+
+function prevVideo() {
+    currentIndex = (currentIndex > 0) ? currentIndex - 1 : thumbnails.length - 1;
+    selectVideo(thumbnails[currentIndex]);
+    carouselContainer.scrollLeft -= thumbnails[currentIndex].offsetWidth + 10;
+}
+
+function nextVideo() {
+    currentIndex = (currentIndex < thumbnails.length - 1) ? currentIndex + 1 : 0;
+    selectVideo(thumbnails[currentIndex]);
+    carouselContainer.scrollLeft += thumbnails[currentIndex].offsetWidth + 10;
+}
+
+function selectVideo(videoElement) {
+    mainVideo.src = videoElement.src;
+    mainVideo.play();
+    currentIndex = Array.from(thumbnails).indexOf(videoElement);
+    updateCarousel();
+}
+
+window.addEventListener('resize', updateCarousel);
+updateCarousel();
+
+    </script>
 </body>
 </html>
