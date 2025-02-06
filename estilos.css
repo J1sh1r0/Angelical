@@ -1,0 +1,77 @@
+body{
+    background: purple;
+}
+/* Fondo general con degradado */
+.services {
+    /*background: linear-gradient(135deg, #3e1e68, #b07bc6);*/
+    padding: 60px 20px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+/* Título y Descripción */
+.section-title {
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.section-description {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 40px;
+    font-style: italic;
+}
+
+/* Contenedor de tarjetas */
+.service-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Tarjeta con efecto de vidrio */
+.service-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 20px;
+    width: 180px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Imagen del Chakra */
+.service-card img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 8px;
+}
+
+/* Título del Servicio */
+.service-card h3 {
+    font-size: 1.2rem;
+    color: #fff;
+    margin-bottom: 6px;
+}
+
+/* Descripción del Servicio */
+.service-card p {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Efecto Hover */
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
