@@ -1,352 +1,417 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Paga - Servicios Angelicales</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Dancing+Script&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Dancing+Script&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
     <style>
-        .section {
-            padding: 50px 0;
-            text-align: center;
-            background: none;
-        }
-        .oferta {
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 15px;
-            padding: 20px;
-            box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
-            transition: transform 0.3s ease;
-            text-align: center;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .oferta:hover {
-            transform: translateY(-5px);
-        }
-        .imagen {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-        }
-        .imagen img {
-            width: 120px;
-            height: auto;
-            margin-bottom: 15px;
-            border-radius: 10px;
-        }
-        .informacion h3 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 10px;
-            color: #ffbf00;
-        }
-        .informacion p {
-            font-size: 1rem;
-            margin-bottom: 15px;
-            flex-grow: 1;
-        }
-        .btn-adquirir {
-            width: 100%;
-            background: #ff4081;
-            border: none;
-            color: white;
-            padding: 12px;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: background 0.3s;
-        }
-        .btn-adquirir:hover {
-            background: #e60073;
-        }
-                /* CSS adicional */
-                .imagen {
-            margin-top: -20px; /* Mueve la imagen hacia arriba */
-        }
-        .btn-adquirir {
-            width: 100%; /* Estira el botón para que ocupe todo el ancho */
-            text-transform: none;
-        }
-        .btn-agregado {
-            background-color: #4caf50;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: not-allowed;
-            text-transform: none;
-        }
-        /* Barra fija en la parte inferior */
-        .barra-fija {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
-            padding: 10px 0;
-            text-align: center;
-            z-index: 999;
-        }
-        .barra-fija .btn-proceder {
-            background-color: #ff4081;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-        .barra-fija .btn-proceder:hover {
-            background-color: #e60073;
-        }
-        /* Estilo para el mensaje de eliminación del carrito */
-        .mensaje-carrito {
-            background-color: #f44336;
-            color: white;
-            padding: 10px;
-            text-align: center;
-            position: fixed;
-            bottom: 50px;
-            left: 0;
-            right: 0;
-            display: none;
-            z-index: 1000;
-        }
+      .section {
+        padding: 50px 0;
+        text-align: center;
+        background: none;
+      }
+      .oferta {
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 15px;
+        padding: 20px;
+        box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+        transition: transform 0.3s ease;
+        text-align: center;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .oferta:hover {
+        transform: translateY(-5px);
+      }
+      .imagen {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+      }
+      .imagen img {
+        width: 120px;
+        height: auto;
+        margin-bottom: 15px;
+        border-radius: 10px;
+      }
+      .informacion h3 {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 10px;
+        color: #ffbf00;
+      }
+      .informacion p {
+        font-size: 1rem;
+        margin-bottom: 15px;
+        flex-grow: 1;
+      }
+      .btn-adquirir {
+        width: 100%;
+        background: #ff4081;
+        border: none;
+        color: white;
+        padding: 12px;
+        border-radius: 5px;
+        font-weight: bold;
+        transition: background 0.3s;
+      }
+      .btn-adquirir:hover {
+        background: #e60073;
+      }
+      /* CSS adicional */
+      .imagen {
+        margin-top: -20px; /* Mueve la imagen hacia arriba */
+      }
+      .btn-adquirir {
+        width: 100%; /* Estira el botón para que ocupe todo el ancho */
+        text-transform: none;
+      }
+      .btn-agregado {
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: not-allowed;
+        text-transform: none;
+      }
+      /* Barra fija en la parte inferior */
+      .barra-fija {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        padding: 10px 0;
+        text-align: center;
+        z-index: 999;
+      }
+      .barra-fija .btn-proceder {
+        background-color: #ff4081;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+      .barra-fija .btn-proceder:hover {
+        background-color: #e60073;
+      }
+      /* Estilo para el mensaje de eliminación del carrito */
+      .mensaje-carrito {
+        background-color: #f44336;
+        color: white;
+        padding: 10px;
+        text-align: center;
+        position: fixed;
+        bottom: 50px;
+        left: 0;
+        right: 0;
+        display: none;
+        z-index: 1000;
+      }
     </style>
-</head>
-<header class="text-center p-4">
+  </head>
+  <header class="text-center p-4">
     <h1 class="persuasive">Sanación y Equilibrio Espiritual</h1>
     <p class="subtitle">Descubre el poder de la energía y transforma tu vida</p>
-</header>
+  </header>
 
-<body>
+  <body>
     <nav class="nav-container">
-        <ul class="nav-list">
-            <li class="nav-item">
-                <a href="index.html" class="nav-link">Inicio</a>
-            </li>
-            <li class="nav-item">
-                <a href="contacto.html" class="nav-link">Contacto</a>
-            </li>
-        </ul>
+      <ul class="nav-list">
+        <li class="nav-item">
+          <a href="index.html" class="nav-link">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a href="contacto.html" class="nav-link">Contacto</a>
+        </li>
+      </ul>
     </nav>
 
-        <!-- Fondo Estrellado -->
-        <div class="stars"></div>
+    <!-- Fondo Estrellado -->
+    <div class="stars"></div>
 
     <section id="oferta" class="section">
-        <h2 style="font-size: 2.5rem; font-weight: 700; color: #ffbf00; text-shadow: 2px 2px 5px rgba(255, 191, 0, 0.6);">
-            <i class="fas fa-gem" style="color: #e60073; margin-right: 10px;"></i>
-            Descubre Nuestras Ofertas Exclusivas
-            <i class="fas fa-gem" style="color: #e60073; margin-left: 10px;"></i>
-        </h2>
-                <p>Aprovecha los beneficios de nuestras sesiones de sanación y equilibrio energético.</p>
+      <h2
+        style="
+          font-size: 2.5rem;
+          font-weight: 700;
+          color: #ffbf00;
+          text-shadow: 2px 2px 5px rgba(255, 191, 0, 0.6);
+        "
+      >
+        <i class="fas fa-gem" style="color: #e60073; margin-right: 10px"></i>
+        Descubre Nuestras Ofertas Exclusivas
+        <i class="fas fa-gem" style="color: #e60073; margin-left: 10px"></i>
+      </h2>
+      <p>
+        Aprovecha los beneficios de nuestras sesiones de sanación y equilibrio
+        energético.
+      </p>
 
-        <div class="container">
-            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
-                <div class="col">
-                    <div class="oferta">
-                        <div class="imagen">
-                            <img src="Chakras/Chakras/AMARILLO.png" class="img-fluid" alt="Paquete 1">
-                        </div>
-                        <div class="informacion">
-                            <h3><i class="fas fa-leaf"></i> Armonización Energética</h3>
-                            <p>Limpieza de Cuerpo Etéreo, Alineación de Chakras y Sanación General.<br><br><strong>Precio: $120</strong></p>
-                            <button class="btn btn-adquirir" onclick="agregarAlCarrito(this)"><i class="fas fa-cart-plus"></i> Agregar al carrito</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="oferta">
-                        <div class="imagen">
-                            <img src="Chakras/Chakras/AZUL.png" class="img-fluid" alt="Paquete 2">
-                        </div>
-                        <div class="informacion">
-                            <h3><i class="fas fa-star"></i> Conexión Espiritual</h3>
-                            <p>Lectura de Cartas Angelicales, Sanación a un Ser Fallecido y Polarización de Chakras.<br><br><strong>Precio: $150</strong></p>
-                            <button class="btn btn-adquirir" onclick="agregarAlCarrito(this)"><i class="fas fa-cart-plus"></i> Agregar al carrito</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="oferta">
-                        <div class="imagen">
-                            <img src="Chakras/Chakras/CELESTE.png" class="img-fluid" alt="Paquete 3">
-                        </div>
-                        <div class="informacion">
-                            <h3><i class="fas fa-heart"></i> Sanación Integral</h3>
-                            <p>Limpieza de Cuerpo Etéreo, Sanación General y Reconocimiento de Sistemas Dañados.<br><br><strong>Precio: $180</strong></p>
-                            <button class="btn btn-adquirir" onclick="agregarAlCarrito(this)"><i class="fas fa-cart-plus"></i> Agregar al carrito</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="oferta">
-                        <div class="imagen">
-                            <img src="Chakras/Chakras/MORADO.png" class="img-fluid" alt="Paquete 4">
-                        </div>
-                        <div class="informacion">
-                            <h3><i class="fas fa-sun"></i> Restauración Espiritual</h3>
-                            <p>Polarización de Chakras, Alineación de Chakras y Limpieza de Cuerpo Etéreo.<br><br><strong>Precio: $220</strong></p>
-                            <button class="btn btn-adquirir" onclick="agregarAlCarrito(this)"><i class="fas fa-cart-plus"></i> Agregar al carrito</button>
-                        </div>
-                    </div>
-                </div>
+      <div class="container">
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+          <div class="col">
+            <div class="oferta">
+              <div class="imagen">
+                <img
+                  src="Chakras/Chakras/AMARILLO.png"
+                  class="img-fluid"
+                  alt="Paquete 1"
+                />
+              </div>
+              <div class="informacion">
+                <h3><i class="fas fa-leaf"></i> Armonización Energética</h3>
+                <p>
+                  Limpieza de Cuerpo Etéreo, Alineación de Chakras y Sanación
+                  General.<br /><br /><strong>Precio: $120</strong>
+                </p>
+                <button
+                  class="btn btn-adquirir"
+                  onclick="agregarAlCarrito(this)"
+                >
+                  <i class="fas fa-cart-plus"></i> Agregar al carrito
+                </button>
+              </div>
             </div>
+          </div>
+          <div class="col">
+            <div class="oferta">
+              <div class="imagen">
+                <img
+                  src="Chakras/Chakras/AZUL.png"
+                  class="img-fluid"
+                  alt="Paquete 2"
+                />
+              </div>
+              <div class="informacion">
+                <h3><i class="fas fa-star"></i> Conexión Espiritual</h3>
+                <p>
+                  Lectura de Cartas Angelicales, Sanación a un Ser Fallecido y
+                  Polarización de Chakras.<br /><br /><strong
+                    >Precio: $150</strong
+                  >
+                </p>
+                <button
+                  class="btn btn-adquirir"
+                  onclick="agregarAlCarrito(this)"
+                >
+                  <i class="fas fa-cart-plus"></i> Agregar al carrito
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="oferta">
+              <div class="imagen">
+                <img
+                  src="Chakras/Chakras/CELESTE.png"
+                  class="img-fluid"
+                  alt="Paquete 3"
+                />
+              </div>
+              <div class="informacion">
+                <h3><i class="fas fa-heart"></i> Sanación Integral</h3>
+                <p>
+                  Limpieza de Cuerpo Etéreo, Sanación General y Reconocimiento
+                  de Sistemas Dañados.<br /><br /><strong>Precio: $180</strong>
+                </p>
+                <button
+                  class="btn btn-adquirir"
+                  onclick="agregarAlCarrito(this)"
+                >
+                  <i class="fas fa-cart-plus"></i> Agregar al carrito
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="oferta">
+              <div class="imagen">
+                <img
+                  src="Chakras/Chakras/MORADO.png"
+                  class="img-fluid"
+                  alt="Paquete 4"
+                />
+              </div>
+              <div class="informacion">
+                <h3><i class="fas fa-sun"></i> Restauración Espiritual</h3>
+                <p>
+                  Polarización de Chakras, Alineación de Chakras y Limpieza de
+                  Cuerpo Etéreo.<br /><br /><strong>Precio: $220</strong>
+                </p>
+                <button
+                  class="btn btn-adquirir"
+                  onclick="agregarAlCarrito(this)"
+                >
+                  <i class="fas fa-cart-plus"></i> Agregar al carrito
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
-        <!-- Barra Fija de Proceder al Carrito -->
-        <div class="barra-fija" id="barraCarrito" style="display: none;">
-            <p>¡Productos agregados al carrito!</p>
-            <button class="btn-proceder" onclick="window.location.href='pago.html'">Proceder al carrito</button>
-        </div>
-    
-        <!-- Mensaje cuando se quita el producto del carrito -->
-        <div class="mensaje-carrito" id="mensajeCarrito">Se ha quitado un producto de su carrito.</div>
-    
-        <footer>
-            <p>&copy; 2025 Servicios Angelicales. Todos los derechos reservados.</p>
-        </footer>
+    <!-- Barra Fija de Proceder al Carrito -->
+    <div class="barra-fija" id="barraCarrito" style="display: none">
+      <p>¡Productos agregados al carrito!</p>
+      <button class="btn-proceder" onclick="procederAlCarrito()">
+        Proceder al carrito
+      </button>
+    </div>
 
-    <script>
-        // Función para agregar y quitar productos del carrito
-        function agregarAlCarrito(button) {
-            // Si el producto ya ha sido agregado, lo quitamos
-            if (button.classList.contains('btn-agregado')) {
-                // Volver a su estado original
-                button.innerText = 'Agregar al carrito';
-                button.classList.remove('btn-agregado');
-                button.classList.add('btn-primary');
-                
-                // Mostrar mensaje de eliminación
-                mostrarMensaje('Se ha quitado un producto de su carrito.');
-                
-                // Si no hay más productos agregados, ocultar la barra de carrito
-                let botones = document.querySelectorAll('.btn-adquirir');
-                let carritoVisible = false;
-                botones.forEach(function(btn) {
-                    if (btn.classList.contains('btn-agregado')) {
-                        carritoVisible = true;
-                    }
-                });
+    <!-- Mensaje cuando se quita el producto del carrito -->
+    <div class="mensaje-carrito" id="mensajeCarrito">
+      Se ha quitado un producto de su carrito.
+    </div>
 
-                if (!carritoVisible) {
-                    document.getElementById('barraCarrito').style.display = 'none';
-                }
-            } else {
-                // Cambiar a estado "Agregado"
-                button.innerText = 'Agregado';
-                button.classList.remove('btn-primary');
-                button.classList.add('btn-agregado');
-                
-                // Mostrar la barra de carrito si no está visible
-                document.getElementById('barraCarrito').style.display = 'block';
-            }
-        }
-
-        // Función para mostrar el mensaje cuando se quita un producto
-        function mostrarMensaje(mensaje) {
-            const mensajeElemento = document.getElementById('mensajeCarrito');
-            mensajeElemento.innerText = mensaje;
-            mensajeElemento.style.display = 'block';
-
-            // Ocultar el mensaje después de 2 segundos
-            setTimeout(function() {
-                mensajeElemento.style.display = 'none';
-            }, 2000);
-        }
-    </script>
+    <footer>
+      <p>&copy; 2025 Servicios Angelicales. Todos los derechos reservados.</p>
+    </footer>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
-    <script src="script.js"></script> 
+    <script src="script.js"></script>
     <!-- Modal de éxito al agregar al carrito -->
-<div class="modal fade" id="modalCarrito" tabindex="-1" aria-labelledby="modalCarritoLabel" aria-hidden="true">
-    <div class="modal-dialog">
+    <div
+      class="modal fade"
+      id="modalCarrito"
+      tabindex="-1"
+      aria-labelledby="modalCarritoLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
         <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="modalCarritoLabel">Producto Agregado al Carrito</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                ¡El producto ha sido agregado a tu carrito exitosamente!
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                <button type="button" class="btn btn-primary" onclick="window.location.href='pago.html'">Proceder al carrito</button>
-            </div>
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalCarritoLabel">
+              Producto Agregado al Carrito
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            ¡El producto ha sido agregado a tu carrito exitosamente!
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Cerrar
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary"
+              onclick="window.location.href='pago.html'"
+            >
+              Proceder al carrito
+            </button>
+          </div>
         </div>
+      </div>
     </div>
-</div>
-</body>
-</html>
-
-<script>
+  </body>
+  <script>
     // Objeto carrito para almacenar productos
-    let carrito = [];
+    let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
     // Función para agregar productos al carrito
     function agregarAlCarrito(button) {
-        // Obtener los datos del producto
-        const nombreProducto = button.closest('.informacion').querySelector('h3').innerText;
-        const precioProducto = button.closest('.informacion').querySelector('p').innerText.split('Precio: $')[1];
+      // Obtener los datos del producto
+      const nombreProducto = button
+        .closest(".informacion")
+        .querySelector("h3").innerText;
+      const precioTexto = button
+        .closest(".informacion")
+        .querySelector("p").innerText;
+      const precioProducto = parseFloat(precioTexto.match(/\d+(\.\d+)?/)[0]);
 
-        // Verificar si el producto ya está en el carrito
-        const productoExistente = carrito.find(producto => producto.nombre === nombreProducto);
-        
-        if (productoExistente) {
-            // Si el producto ya está, eliminarlo
-            carrito = carrito.filter(producto => producto.nombre !== nombreProducto);
+      // Obtener carrito actual del localStorage
+      let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
-            // Cambiar el estado del botón a "Agregar al carrito"
-            button.innerHTML = '<i class="fas fa-cart-plus"></i> Agregar al carrito';
-            button.style.textTransform = 'none'; 
-            button.classList.remove('btn-agregado');
-            button.classList.add('btn-primary');
-            
-            // Mostrar mensaje de eliminación
-            mostrarMensaje('Se ha quitado un producto de su carrito.');
-        } else {
-            // Si no está en el carrito, agregarlo
-            carrito.push({
-                nombre: nombreProducto,
-                precio: precioProducto
-            });
+      // Verificar si el producto ya está en el carrito
+      const productoExistente = carrito.find(
+        (producto) => producto.nombre === nombreProducto
+      );
 
-            // Cambiar el estado del botón a "Agregado"
-            button.innerText = 'Agregado';
-            button.classList.remove('btn-primary');
-            button.classList.add('btn-agregado');
-            
-            // Mostrar la barra de carrito si no está visible
-            document.getElementById('barraCarrito').style.display = 'block';
-            
-            // Mostrar mensaje de agregado
-            mostrarMensaje('¡Producto agregado al carrito!');
-        }
+      if (productoExistente) {
+        // Si el producto ya está en el carrito, lo eliminamos
+        carrito = carrito.filter(
+          (producto) => producto.nombre !== nombreProducto
+        );
+        button.innerHTML =
+          '<i class="fas fa-cart-plus"></i> Agregar al carrito';
+        button.classList.remove("btn-agregado");
+        button.classList.add("btn-adquirir");
+        mostrarMensaje("Se ha quitado un producto de su carrito.");
+      } else {
+        // Si no está en el carrito, lo agregamos
+        carrito.push({ nombre: nombreProducto, precio: precioProducto });
+        button.innerText = "Agregado";
+        button.classList.remove("btn-adquirir");
+        button.classList.add("btn-agregado");
+        mostrarMensaje("¡Producto agregado al carrito!");
+      }
 
-        // Mostrar el carrito en la consola
-        console.log("Carrito:", carrito);
+      // Guardar carrito actualizado en localStorage
+      localStorage.setItem("carrito", JSON.stringify(carrito));
+
+      // Mostrar u ocultar la barra del carrito según corresponda
+      const barraCarrito = document.getElementById("barraCarrito");
+      barraCarrito.style.display = carrito.length > 0 ? "block" : "none";
+
+      console.log("Carrito actualizado:", carrito);
     }
 
     // Función para mostrar el mensaje cuando se agrega o quita un producto
     function mostrarMensaje(mensaje) {
-        const mensajeElemento = document.getElementById('mensajeCarrito');
-        mensajeElemento.innerText = mensaje;
-        mensajeElemento.style.display = 'block';
+      const mensajeElemento = document.getElementById("mensajeCarrito");
+      mensajeElemento.innerText = mensaje;
+      mensajeElemento.style.display = "block";
 
-        // Ocultar el mensaje después de 2 segundos
-        setTimeout(function() {
-            mensajeElemento.style.display = 'none';
-        }, 2000);
+      // Ocultar el mensaje después de 2 segundos
+      setTimeout(function () {
+        mensajeElemento.style.display = "none";
+      }, 2000);
     }
-</script>
 
+    // Función para proceder al carrito
+    function procederAlCarrito() {
+      if (carrito.length > 0) {
+        setTimeout(() => {
+          window.location.href = "pago.html";
+        }, 500); // Espera 0.5s para asegurar que el carrito esté guardado
+      } else {
+        alert("No hay productos en el carrito.");
+      }
+    }
+  </script>
+</html>

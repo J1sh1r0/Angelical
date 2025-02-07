@@ -38,7 +38,7 @@ body {
 
 /* Contenedor para limitar la altura de la tabla con scroll */
 .table-container {
-    max-height: 300px;  /* Limita la altura de la tabla */
+    max-height: 600px;  /* Limita la altura de la tabla */
     overflow-y: auto;   /* Habilita el scroll vertical */
     margin-bottom: 30px; /* Espacio entre la tabla y la gráfica */
     border-radius: 12px;
@@ -125,37 +125,39 @@ button:hover {
 
 /* Tabla de usuarios */
 table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 30px;
-    animation: fadeInUp 1.2s ease-in-out;
-    border-radius: 12px;
-    overflow: hidden;
-    background: linear-gradient(135deg, #ffffff, #f7f7f7);
+    width: 100%; /* Hace que la tabla ocupe todo el ancho disponible del contenedor padre */
+    border-collapse: collapse; /* Elimina el espacio entre los bordes de las celdas para que se vea uniforme */
+    margin-top: 30px; /* Agrega un margen superior de 30px para separarla de otros elementos */
+    animation: fadeInUp 1.2s ease-in-out; /* Aplica una animación llamada "fadeInUp" con duración de 1.2s y efecto ease-in-out */
+    border-radius: 12px; /* Redondea las esquinas de la tabla con un radio de 12px */
+    overflow: hidden; /* Evita que los bordes redondeados se vean afectados por el contenido interno */
+    background: linear-gradient(135deg, #ffffff, #f7f7f7); /* Agrega un fondo con un degradado en ángulo de 135° de blanco a gris claro */
 }
+
 
 th, td {
-    padding: 20px;
-    border-bottom: 1px solid #e0e0e0;
-    text-align: center;
-    font-size: 18px;
-    color: #333;
+    padding: 20px; /* Agrega un espacio interno de 20px dentro de cada celda */
+    border-bottom: 1px solid #e0e0e0; /* Agrega un borde inferior gris claro de 1px para separar filas */
+    text-align: center; /* Centra el texto dentro de las celdas */
+    font-size: 18px; /* Establece el tamaño de fuente en 18px */
+    color: #333; /* Define el color del texto en un tono gris oscuro */
 }
 
+
 th {
-    background: linear-gradient(135deg, #7b1fa2, #ba68c8);
-    color: white;
-    position: sticky;
-    top: 0;
-    z-index: 1;
-    font-size: 20px;
-    text-transform: uppercase;
+    background: linear-gradient(135deg, #7b1fa2, #ba68c8); /* Aplica un fondo con degradado morado */
+    color: white; /* Cambia el color del texto a blanco para mejor contraste */
+    position: sticky; /* Hace que los encabezados sean fijos al hacer scroll dentro de la tabla */
+    top: 0; /* Fija los encabezados en la parte superior cuando se desplaza */
+    z-index: 1; /* Asegura que los encabezados estén por encima de otras capas */
+    font-size: 20px; /* Hace el tamaño del texto de los encabezados un poco más grande (20px) */
+    text-transform: uppercase; /* Convierte el texto de los encabezados en mayúsculas */
 }
 
 tr:hover {
-    background-color: #f1f3f5;
-    transition: background-color 0.3s ease-in-out;
-    transform: scale(1.01);
+    background-color: #f1f3f5; /* Cambia el color de fondo de la fila a un gris claro cuando el cursor pasa por encima */
+    transition: background-color 0.3s ease-in-out; /* Suaviza la transición del color de fondo en 0.3s */
+    transform: scale(1.01); /* Aplica un leve aumento de tamaño (1%) al hacer hover */
 }
 
 /* Gráfica */

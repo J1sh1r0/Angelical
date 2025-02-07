@@ -1,0 +1,9 @@
+Array
+(
+    [nombre] => Hector
+    [email] => hectorantonio12@gmail.com
+    [telefono] => 867 234 2465
+    [pais] => Colombia
+    [provincia] => Colorado
+    [codigo_postal] => 132003
+)

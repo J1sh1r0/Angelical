@@ -1,187 +1,273 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Paga - Servicios Angelicales</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Dancing+Script&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Dancing+Script&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
     <style>
-/* Estilos para el fondo estrellado */
-.stars {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url('https://example.com/stars-background.jpg') no-repeat center center fixed;
-    background-size: cover;
-    z-index: -1;
-}
+      /* Estilos para el fondo estrellado */
+      .stars {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url("https://example.com/stars-background.jpg") no-repeat
+          center center fixed;
+        background-size: cover;
+        z-index: -1;
+      }
 
-/* Títulos */
-.pago-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: #ffffff;
-    text-transform: uppercase;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
-}
-/* Estilo para el logo de PayPal */
-.paypal-logo {
-    width: 35px; /* Tamaño ajustado del logo */
-    vertical-align: middle; /* Alinea el logo con el texto */
-    margin-left: 10px; /* Espaciado entre el texto y el logo */
-}
+      /* Títulos */
+      .pago-title {
+        font-family: "Playfair Display", serif;
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: #ffffff;
+        text-transform: uppercase;
+        text-shadow: 3px 3px 6px rgba(255, 105, 180, 0.8); /* Efecto neon rosa */
+        text-align: center;
+        padding-bottom: 10px;
+      }
 
-/* Estilo general para la palabra PayPal */
-.paypal-text {
-    font-family: 'Poppins', sans-serif; /* Fuente similar al logo de PayPal */
-    font-weight: 700; /* Peso de la fuente similar al logo */
-    font-size: 2.5rem; /* Tamaño grande para destacarse */
-    letter-spacing: 2px; /* Espaciado entre letras */
-}
+      /* Estilo para el logo de PayPal */
+      .paypal-logo {
+        width: 40px;
+        vertical-align: middle;
+        margin-left: 10px;
+      }
 
-/* Color y estilo para la parte "Pay" */
-.paypal-pay {
-    color: #0070ba; /* Azul oscuro para "Pay" */
-}
+      /* Estilo general para la palabra PayPal */
+      .paypal-text {
+        font-family: "Poppins", sans-serif;
+        font-weight: 700;
+        font-size: 2.5rem;
+        letter-spacing: 2px;
+      }
 
-/* Color y estilo para la parte "Pal" */
-.paypal-pal {
-    color: #009cde; /* Azul más claro para "Pal" */
-}
+      /* Color y estilo para "Pay" y "Pal" */
+      .paypal-pay {
+        color: #0070ba;
+      }
 
-.pago-resumen-title, .pago-card-title {
-    font-size: 1.5rem;
-    color: #fff;
-    margin-bottom: 1rem;
-    font-weight: 700;
-}
+      .paypal-pal {
+        color: #009cde;
+      }
 
-.pago-card-price {
-    font-size: 1.3rem;
-    color: #f1c40f;
-    font-weight: bold;
-}
+      /* Estilos para la sección de resumen de compra */
+      .pago-resumen {
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 15px;
+        padding: 25px;
+        box-shadow: 0 4px 15px rgba(255, 191, 0, 0.4);
+        text-align: center;
+        color: #ffbf00;
+        backdrop-filter: blur(10px); /* Efecto de desenfoque */
+      }
 
-/* Layout y tarjetas */
-.pago-layout {
-    display: flex;
-    gap: 30px;
-    flex-wrap: wrap;
-}
+      .pago-resumen-title {
+        font-size: 2rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        color: #ffbf00;
+        text-shadow: 3px 3px 6px rgba(255, 191, 0, 0.8);
+        margin-bottom: 10px;
+      }
 
-.pago-resumen, .pago-container {
-    background-color: rgba(255, 255, 255, 0.9);
-    border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
+      .pago-resumen-list {
+        font-size: 1.3rem;
+        color: #fff;
+        list-style: none;
+        padding: 0;
+      }
 
-.pago-card {
-    padding: 20px;
-    background-color: purple;
-    color: #fff;
-    border-radius: 12px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease;
-}
+      .pago-resumen-list li {
+        padding: 5px 0;
+        font-weight: 600;
+      }
 
-.pago-card:hover {
-    transform: scale(1.05);
-}
+      /* Estilos mejorados para la tarjeta de pago */
+      .pago-card {
+        background: linear-gradient(135deg, #8a2be2, #ff00ff);
+        color: white;
+        padding: 30px;
+        border-radius: 15px;
+        text-align: center;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
 
-.paypal-btn {
-    background-color: #27ae60;
-    border: none;
-    padding: 15px;
-    font-size: 1.1rem;
-    text-transform: uppercase;
-    color: #fff;
-    text-align: center;
-    border-radius: 5px;
-    display: block;
-    text-decoration: none;
-    transition: background-color 0.3s;
-}
+      .pago-card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 10px 30px rgba(255, 0, 255, 0.5);
+      }
 
-.paypal-btn:hover {
-    background-color: #2ecc71;
-}
+      .pago-card-title {
+        font-size: 2rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        text-shadow: 3px 3px 6px rgba(255, 255, 255, 0.8);
+      }
 
-/* Resumen de compra */
-.pago-resumen-title {
-    color: #333; /* Gris oscuro para los títulos */
-}
+      .pago-card-price {
+        font-size: 1.8rem;
+        font-weight: bold;
+        color: #ffbf00;
+        margin: 15px 0;
+      }
 
-.pago-resumen-description {
-    color: #555; /* Gris claro para la descripción */
-}
+      /* Estilos para el botón de pago */
+      .paypal-btn {
+        background: linear-gradient(90deg, #0070ba, #009cde);
+        border: none;
+        padding: 15px;
+        font-size: 1.2rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        color: white;
+        text-align: center;
+        border-radius: 8px;
+        display: block;
+        text-decoration: none;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
 
-/* Responsividad */
-@media (max-width: 768px) {
-    .pago-layout {
-        flex-direction: column;
-    }
-}
+      .paypal-btn:hover {
+        transform: scale(1.1);
+        box-shadow: 0 5px 20px rgba(0, 112, 186, 0.5);
+      }
+
+      /* Responsividad */
+      @media (max-width: 768px) {
+        .pago-layout {
+          flex-direction: column;
+        }
+      }
     </style>
-</head>
+  </head>
 
-<header class="text-center p-4">
+  <header class="text-center p-4">
     <h1 class="persuasive">Sanación y Equilibrio Espiritual</h1>
     <p class="subtitle">Descubre el poder de la energía y transforma tu vida</p>
-</header>
+  </header>
 
-<body>
+  <body>
     <nav class="nav-container">
-        <ul class="nav-list">
-            <li class="nav-item">
-                <a href="index.html" class="nav-link">Inicio</a>
-            </li>
-            <li class="nav-item">
-                <a href="oferta.html" class="nav-link">Ofertas</a>
-            </li>
-            <li class="nav-item">
-                <a href="contacto.html" class="nav-link">Contacto</a>
-            </li>
-        </ul>
+      <ul class="nav-list">
+        <li class="nav-item">
+          <a href="index.html" class="nav-link">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a href="oferta.html" class="nav-link">Ofertas</a>
+        </li>
+        <li class="nav-item">
+          <a href="contacto.html" class="nav-link">Contacto</a>
+        </li>
+      </ul>
     </nav>
 
     <!-- Fondo Estrellado -->
     <div class="stars"></div>
 
     <section id="pago" class="pago-section">
-        <div class="container">
-            <h2 class="pago-title text-center mb-4">
-                Paga con <span class="paypal-text"><img src="https://www.paypalobjects.com/webstatic/icon/pp258.png" alt="PayPal Logo" class="paypal-logo"> <span class="paypal-pay">Pay</span><span class="paypal-pal">Pal</span></span>
-            </h2>
-            
-            <!-- Usamos d-flex y justify-content-center para centrar las cajas -->
-            <div class="row d-flex justify-content-center pago-layout">
-                <!-- Sección izquierda: Resumen de compra -->
-                <div class="col-md-6 pago-resumen p-4 bg-light rounded shadow-sm">
-                    <h3 class="pago-resumen-title">Resumen de Compra</h3>
-                    <p class="pago-resumen-description">Aquí aparecerá la descripción del servicio seleccionado en la sección de ofertas.</p>
-                </div>
-    
-                <!-- Sección derecha: Pago con PayPal -->
-                <div class="col-md-6 pago-container p-4 bg-white rounded shadow-sm">
-                    <div class="pago-card">
-                        <h3 class="pago-card-title">Servicio de Sanación</h3>
-                        <p class="pago-card-price">$100.00 MXN</p>
-                        <a href="https://www.paypal.com/paypalme/tucuenta/100.00" target="_blank" rel="noopener" class="paypal-btn btn btn-primary btn-lg w-100 mt-3">Pagar con PayPal</a>
-                    </div>
-                </div>
+      <div class="container">
+        <h2 class="pago-title text-center mb-4">
+          Paga con
+          <span class="paypal-text"
+            ><img
+              src="https://www.paypalobjects.com/webstatic/icon/pp258.png"
+              alt="PayPal Logo"
+              class="paypal-logo"
+            />
+            <span class="paypal-pay">Pay</span
+            ><span class="paypal-pal">Pal</span></span
+          >
+        </h2>
+
+        <!-- Usamos d-flex y justify-content-center para centrar las cajas -->
+        <div class="row d-flex justify-content-center pago-layout">
+          <!-- Sección izquierda: Resumen de compra -->
+          <div class="col-md-6 pago-resumen p-4 bg-light rounded shadow-sm">
+            <h3 class="pago-resumen-title">Resumen de Compra</h3>
+            <div id="resumenCompra"></div>
+            <!-- Aquí se mostrarán los productos -->
+          </div>
+
+          <!-- Sección derecha: Pago con PayPal -->
+          <div class="col-md-6 pago-container p-4 bg-white rounded shadow-sm">
+            <div class="pago-card">
+              <h3 class="pago-card-title">Servicio de Sanación</h3>
+              <p class="pago-card-price" id="total-price">$100.00 MXN</p>
+              <a
+                href="#"
+                target="_blank"
+                rel="noopener"
+                class="paypal-btn btn btn-primary btn-lg w-100 mt-3"
+                id="paypal-button"
+              >
+                Pagar con PayPal
+              </a>
             </div>
+          </div>
         </div>
-    </section>    
+      </div>
+    </section>
 
     <footer>
-        <p>&copy; 2025 Servicios Angelicales. Todos los derechos reservados.</p>
+      <p>&copy; 2025 Servicios Angelicales. Todos los derechos reservados.</p>
     </footer>
     <script src="script.js"></script>
-</body>
+  </body>
+  <script>
+    function cargarResumenCompra() {
+      let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+      let resumenContainer = document.getElementById("resumenCompra");
+      let totalContainer = document.getElementById("total-price");
+      let paypalButton = document.getElementById("paypal-button");
+
+      if (carrito.length === 0) {
+        resumenContainer.innerHTML = "<p>No hay productos en el carrito.</p>";
+        totalContainer.innerText = "$0.00 MXN";
+        paypalButton.href = "#";
+        paypalButton.style.pointerEvents = "none"; // Deshabilita el botón
+        return;
+      }
+
+      let resumenHTML = "<ul style='list-style:none; padding:0;'>";
+      let total = 0;
+
+      carrito.forEach((producto) => {
+        resumenHTML += `<li>• ${producto.nombre} - $${producto.precio.toFixed(
+          2
+        )} MXN</li>`;
+        total += producto.precio;
+      });
+
+      resumenHTML += "</ul>";
+      resumenContainer.innerHTML = resumenHTML;
+      totalContainer.innerText = `$${total.toFixed(2)} MXN`;
+
+      // Actualizar el enlace de PayPal con el total
+      paypalButton.href = `https://www.paypal.com/paypalme/tucuenta/${total.toFixed(
+        2
+      )}`;
+      paypalButton.style.pointerEvents = "auto"; // Habilita el botón
+    }
+
+    // Cargar el resumen de compra al cargar la página
+    document.addEventListener("DOMContentLoaded", cargarResumenCompra);
+  </script>
 </html>
