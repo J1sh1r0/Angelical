@@ -1,13 +1,14 @@
 body {
     font-family: 'Poppins', sans-serif;
-    background: #0a002b;
+    background: linear-gradient(to right, #2c003e, #000000);
     margin: 0;
     overflow-x: hidden;
     color: #ddd;
     text-align: center;
     position: relative;
-    margin-top: 60px; /* Deja espacio para que el contenido no quede cubierto por la barra fija */
 }
+
+
 
 /* Fondo estrellado animado */
 .stars {
@@ -101,7 +102,7 @@ body {
     background-position: center;
     border-radius: 50%;
     box-shadow: 0 5px 10px rgba(255, 255, 255, 0.2);
-    font-size: 1rem;                     
+    font-size: 1rem;
     font-weight: bold;
     color: white;
     text-align: center;
@@ -115,12 +116,12 @@ body {
     box-shadow: 0 5px 15px rgba(255, 255, 255, 0.6); /* Agrega un sutil resplandor */
 }
 
-
 /* Estilo de la información de los servicios */
+/* Estilo inicial de la información del servicio */
 .service-info {
-    display: none;
-    opacity: 0;
-    transform: translateY(-20px);
+    display: none; /* Oculto por defecto */
+    opacity: 0; /* Inicialmente transparente */
+    transform: translateY(-20px); /* Inicialmente desplazado hacia arriba */
     background: rgba(255, 255, 255, 0.2);
     color: white;
     padding: 15px;
@@ -130,7 +131,7 @@ body {
     margin-left: auto;
     margin-right: auto;
     font-size: 1.1rem;
-    transition: opacity 0.5s ease, transform 0.5s ease;
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Transición suave para opacidad y desplazamiento */
 }
 
 /* Estilo cuando la información se muestra */
@@ -201,7 +202,7 @@ video {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: linear-gradient(135deg, #a955f781, #3b1361);
+    background: linear-gradient(135deg, #a955f781, #3b1361); /* Degradado morado */
     color: white;
     border: none;
     cursor: pointer;
@@ -215,7 +216,6 @@ video {
     justify-content: center;
     width: 60px;
     height: 60px;
-    z-index: 999; /* Asegura que las flechas estén por encima de otros elementos */
 }
 
 .arrow i {
@@ -348,19 +348,11 @@ footer {
 
 /* Estilo para el contenedor de navegación */
 .nav-container {
-    background-color: rgba(112, 44, 71, 0.9); /* Fondo más opaco */
+    background-color: rgba(112, 44, 71, 0.7);
     padding: 10px 0;
     text-align: center;
     transition: background-color 0.3s;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 10;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-    display: flex; /* Asegurarse de que los elementos estén en una fila */
-    justify-content: center; /* Centrar los elementos de la barra */
 }
-
 
 /* Estilo para la lista de navegación */
 .nav-list {
@@ -388,163 +380,186 @@ footer {
     color: #ffbf00; /* Color amarillo dorado */
 }
 
-/* Estilo para el botón de cierre */
-.close-info {
-    background-color: #cc0055; /* Rojo para llamar la atención */
+/* Sección de Pago */
+.pago-section {
+    padding: 80px 0;
+    background: linear-gradient(to right, #3b1e5a, #000000);
     color: white;
-    border: none;
-    padding: 8px 12px;
-    margin-top: 10px;
-    cursor: pointer;
-    font-size: 1rem;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    overflow: hidden; /* Para ocultar elementos fuera del área */
 }
 
-.close-info:hover {
-    background-color: #8b003a; /* Un tono más oscuro al hacer hover */
-}
-
-/* Estilo general para los links */
-.nav-link {
-    color: #ffffff;
-    text-decoration: none;
-    font-weight: 400;
-    padding: 10px 20px;
-    border-radius: 5px;
-    transition: all 0.3s ease;
-}
-
-/* Efecto cuando el mouse pasa sobre los enlaces */
-.nav-link:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-    color: #ffa9c6;
-}
-
-/* Efecto parpadeante para el enlace de "Ofertas" */
-.nav-item a[href="oferta.html"] {
-    background: #ff4081;
-    color: #fff;
+.pago-title {
+    font-size: 3rem;
+    margin-bottom: 40px;
+    text-transform: uppercase;
     font-weight: bold;
-    padding: 12px 24px;
+    color: #ff00e1;
+    text-shadow: 0 2px 5px rgba(255, 0, 225, 0.7), 0 0 15px #ff00e1, 0 0 25px #ff00e1;
+    animation: glow 1.5s ease-in-out infinite alternate;
+}
+
+/* Animación de resplandor en el título */
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 10px #ff00e1, 0 0 20px #ff00e1, 0 0 30px #ff00e1;
+    }
+    100% {
+        text-shadow: 0 0 20px #ff00e1, 0 0 40px #ff00e1, 0 0 60px #ff00e1;
+    }
+}
+
+/* Contenedor principal de pago */
+.pago-layout {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 50px;
+    width: 90%;
+    max-width: 1200px;
+    flex-wrap: wrap;
+}
+
+/* Resumen de compra (lado izquierdo) */
+.pago-resumen {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 30px;
     border-radius: 20px;
-    animation: blink 1s infinite; /* Animación de parpadeo */
+    box-shadow: 0 0 25px rgba(255, 215, 0, 0.8), 0 0 50px rgba(255, 0, 225, 0.5);
+    width: 45%;
+    min-height: 250px;
+    text-align: left;
+    font-size: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    backdrop-filter: blur(5px);
+    border: 2px solid rgba(255, 0, 225, 0.3);
 }
 
-@keyframes blink {
-    0%, 50%, 100% {
-        opacity: 1;
+.pago-resumen h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #f4f4f9;
+    text-shadow: 0 2px 5px rgba(255, 0, 225, 0.6);
+}
+
+/* Tarjeta de pago con PayPal (lado derecho) */
+.pago-container {
+    display: flex;
+    justify-content: center;
+    width: 45%;
+}
+
+.pago-card {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 0 25px rgba(255, 215, 0, 0.8), 0 0 50px rgba(255, 0, 225, 0.5);
+    max-width: 400px;
+    text-align: center;
+    min-height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    backdrop-filter: blur(5px);
+    border: 2px solid rgba(255, 0, 225, 0.3);
+}
+
+.pago-card-title {
+    font-size: 1.7rem;
+    margin-bottom: 10px;
+    color: #ffbed4;
+    text-shadow: 0 2px 5px rgba(255, 255, 255, 0.8);
+}
+
+.pago-card-price {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #ffbed4;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* Estilos del botón de PayPal */
+.paypal-btn {
+    display: inline-block;
+    background: linear-gradient(135deg, #ffd700, #ffbb00);
+    color: black;
+    padding: 12px 25px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 8px;
+    transition: 0.3s;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(255, 215, 0, 0.6);
+    margin-top: 20px;
+    border: 2px solid transparent;
+}
+
+.paypal-btn:hover {
+    background: linear-gradient(135deg, #ffbb00, #ffd700);
+    box-shadow: 0 6px 15px rgba(255, 215, 0, 0.8);
+    border: 2px solid #ff00e1; /* Resalta el borde en el hover */
+}
+
+/* Partículas flotantes (para un efecto místico) */
+.pago-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://www.transparenttextures.com/patterns/triangles.png') repeat;
+    opacity: 0.1;
+    pointer-events: none;
+}
+
+.pago-section::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(129, 13, 129, 0.5) 20%, transparent 70%);
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+/* Efecto de partículas flotantes */
+@keyframes floatParticles {
+    0% {
+        transform: translateY(0);
     }
-    25%, 75% {
-        opacity: 0.6;
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
     }
 }
 
-/* Detener el parpadeo y hacer que brille cuando se pasa el ratón sobre "Ofertas" */
-.nav-item a[href="oferta.html"]:hover {
-    animation: none; /* Detenemos la animación de parpadeo */
-    background: #ff80ab; /* Cambia el fondo */
-    color: #fff; /* Mantener el texto blanco */
-    box-shadow: 0 0 25px #ff4081, 0 0 50px #ff4081, 0 0 75px #ff4081; /* Efecto de brillo */
+.pago-section .pago-layout {
+    animation: floatParticles 10s infinite ease-in-out;
 }
 
-/* Media Queries */
+/* Responsive */
 @media screen and (max-width: 768px) {
-    /* Ajustar márgenes y tamaño de la fuente para móviles */
-    body {
-        margin-top: 40px;  /* Menos espacio arriba */
+    .pago-layout {
+        flex-direction: column;
+        align-items: center;
     }
 
-    header h1 {
-        font-size: 2.5em;  /* Reducción del tamaño de la fuente */
-    }
-
-    .services {
-        width: 90%; /* Asegura que la sección de servicios se ajuste a la pantalla */
-        padding: 10px;
-    }
-
-    .service {
-        width: 120px;  /* Reducir el tamaño de los servicios */
-        height: 120px;
-    }
-
-    .btn-primary {
-        font-size: 1rem; /* Hacer los botones más pequeños en móviles */
-        padding: 8px 15px;
-    }
-
-    .video-section {
+    .pago-resumen, .pago-container {
         width: 90%;
-        max-width: 100%;
-        margin: 20px auto;
-        position: relative; /* Necesario para que las flechas se posicionen correctamente */
-    }
-
-    .video-container {
-        padding: 0; /* Eliminar padding */
-    }
-
-    /* Mover las flechas hacia abajo en pantallas pequeñas */
-    .arrow {
-        top: unset; /* Quitar la posición top */
-        bottom: 10px; /* Posicionar las flechas hacia la parte inferior */
-    }
-
-    .arrow.left {
-        left: 10px; /* Asegura que la flecha izquierda quede a la izquierda */
-    }
-
-    .arrow.right {
-        right: 10px; /* Asegura que la flecha derecha quede a la derecha */
-    }
-
-    /* Reducción de tamaño y disposición para íconos de navegación */
-    .arrow {
-        padding: 15px;
-        font-size: 24px;
-        width: 50px;
-        height: 50px;
-    }
-
-    .nav-container {
-        padding: 10px 0;
-    }
-
-    .nav-item {
-        margin: 0 15px;
-    }
-
-    /* Ajustar el tamaño de las imágenes en la oferta */
-    .imagen img {
-        width: 120px; /* Menor tamaño en móviles */
-        height: auto;
-        margin-right: 15px;
-    }
-
-    /* Ajustes en la información de cada oferta */
-    .oferta {
-        flex-direction: column; /* Cambiar la disposición para móviles */
         text-align: center;
-    }
-
-    .oferta .informacion {
-        margin-top: 10px;
-        text-align: center;
-    }
-
-    footer {
-        font-size: 0.9rem; /* Ajustar el tamaño de fuente */
-    }
-
-    /* Menú de navegación en pantallas móviles */
-    .nav-list {
-        display: block;
-        padding: 0;
-        text-align: center;
-    }
-
-    .nav-item {
-        margin: 10px 0;
     }
 }
