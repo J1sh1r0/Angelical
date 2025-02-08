@@ -269,5 +269,23 @@
 
     // Cargar el resumen de compra al cargar la página
     document.addEventListener("DOMContentLoaded", cargarResumenCompra);
+
+    function marcarCompraRealizada() {
+      let emailUsuario = localStorage.getItem("usuario_email"); // Debe estar almacenado al registrarse
+      if (!emailUsuario) return;
+
+      fetch("actualizar_estado.php", {
+        method: "POST",
+        body: JSON.stringify({ email: emailUsuario }),
+        headers: { "Content-Type": "application/json" },
+      });
+    }
+
+    // Detectar cuando el usuario paga
+    document
+      .getElementById("paypal-button")
+      .addEventListener("click", function () {
+        marcarCompraRealizada();
+      });
   </script>
 </html>

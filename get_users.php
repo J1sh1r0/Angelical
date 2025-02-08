@@ -13,8 +13,8 @@ if ($conn->connect_error) {
     die("Conexión fallida: " . $conn->connect_error);
 }
 
-// Consulta para obtener los datos de la tabla 'usuarios'
-$sql = "SELECT nombre, email, telefono, visitas, ultima_visita FROM usuarios";
+// Consulta para obtener los datos de la tabla 'usuarios' con estado de transacción
+$sql = "SELECT nombre, email, telefono, visitas, ultima_visita, estado_transaccion FROM usuarios";
 $result = $conn->query($sql);
 
 $users = [];

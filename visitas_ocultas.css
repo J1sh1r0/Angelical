@@ -20,6 +20,20 @@ body {
     animation: backgroundShift 10s infinite alternate;
 }
 
+/* Transacciones completadas */
+.success {
+    background-color: rgba(46, 204, 113, 0.3); /* Verde claro */
+    color: #2ecc71;
+    font-weight: bold;
+}
+
+/* Transacciones pendientes */
+.pending {
+    background-color: rgba(241, 196, 15, 0.3); /* Amarillo claro */
+    color: #f1c40f;
+    font-weight: bold;
+}
+
 .hidden-button {
     position: fixed;
     bottom: 15px;

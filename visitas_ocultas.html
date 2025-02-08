@@ -23,10 +23,11 @@
         <table>
           <thead>
             <tr>
-              <th>Nombre</th>
-              <th>Email</th>
-              <th>Teléfono</th>
-              <th>Visitas</th>
+              <th>NOMBRE</th>
+              <th>EMAIL</th>
+              <th>TELÉFONO</th>
+              <th>VISITAS</th>
+              <th>ESTATUS</th>
             </tr>
           </thead>
           <tbody id="userTable">
@@ -35,7 +36,9 @@
         </table>
       </div>
       <canvas id="visitChart" width="600" height="400"></canvas>
-      <button id="downloadExcel" class="download-btn">Descargar en Excel </button>
+      <button id="downloadExcel" class="download-btn">
+        Descargar en Excel
+      </button>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -62,7 +65,8 @@
         fetch("get_users.php")
           .then((response) => response.json())
           .then((data) => {
-            users = data; // Asignamos los datos a la variable 'users'
+            console.log(data); // <-- Agrega esto para ver los datos en la consola
+            users = data;
             populateTable(users);
             loadChart(users);
           })
@@ -73,14 +77,26 @@
 
       function populateTable(users) {
         const userTable = document.getElementById("userTable");
-        userTable.innerHTML = ""; // Limpiar tabla antes de insertar nuevos datos
+        userTable.innerHTML = ""; // Limpiar la tabla antes de insertar nuevos datos
+
         users.forEach((user) => {
-          const row = `<tr>
+          // Verificar si el estado de la transacción está definido
+          let estado = user.estado_transaccion
+            ? user.estado_transaccion
+            : "Sin información";
+
+          // Determinar el color de la fila según el estado de la transacción
+          let rowColor = estado === "compra realizada" ? "#D4EDDA" : "#F8D7DA"; // Verde para compra, rojo para no compra
+
+          const row = `
+        <tr style="background-color: ${rowColor};">
             <td>${user.nombre}</td>
             <td>${user.email}</td>
             <td>${user.telefono}</td>
             <td>${user.visitas}</td>
+            <td>${estado}</td>
         </tr>`;
+
           userTable.innerHTML += row;
         });
       }

@@ -82,3 +82,15 @@ function toggleInfo(infoId) {
         serviceElement.classList.remove('active');
     }
 }
+
+// Guardar el email del usuario después del registro
+function guardarEmailUsuario(email) {
+    localStorage.setItem("usuario_email", email);
+}
+
+// Llamar a esta función cuando el usuario envíe el formulario de registro
+document.getElementById("formularioRegistro").addEventListener("submit", function(event) {
+    event.preventDefault(); // Evitar que recargue la página
+    let email = document.getElementById("email").value;
+    guardarEmailUsuario(email);
+});
