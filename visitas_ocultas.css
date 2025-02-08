@@ -1,0 +1,261 @@
+/* Estilo avanzado y animaciones para la página de visitas ocultas */
+
+/* Reset de estilos para asegurar consistencia */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #e0f7fa, #e1bee7);
+    color: #333;
+    padding: 80px;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-y: auto;
+    animation: backgroundShift 10s infinite alternate;
+}
+
+.hidden-button {
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    opacity: 0.05;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.hidden-button:hover {
+    opacity: 0.8;
+    transform: rotate(360deg);
+}
+
+/* Contenedor para limitar la altura de la tabla con scroll */
+.table-container {
+    max-height: 300px;  /* Limita la altura de la tabla */
+    overflow-y: auto;   /* Habilita el scroll vertical */
+    margin-bottom: 30px; /* Espacio entre la tabla y la gráfica */
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+
+#passwordPrompt, #dashboard {
+    display: none;
+    background: linear-gradient(135deg, #ffffff, #f1f1f1);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 1s ease-in-out forwards;
+    max-width: 1100px;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 50px;
+    position: relative;
+    overflow: hidden;
+}
+
+#passwordPrompt::before, #dashboard::before {
+    content: "";
+    position: absolute;
+    top: -50px;
+    left: -50px;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(156, 39, 176, 0.2), transparent);
+    transform: rotate(45deg);
+    z-index: -1;
+}
+
+#passwordPrompt h2, #dashboard h2 {
+    margin-bottom: 25px;
+    font-size: 32px;
+    color: #5e35b1;
+    position: relative;
+    animation: slideDown 0.8s ease-in-out;
+}
+
+input[type="password"] {
+    width: 100%;
+    padding: 15px 20px;
+    border: 2px solid #ced4da;
+    border-radius: 12px;
+    outline: none;
+    font-size: 18px;
+    margin-bottom: 20px;
+    transition: border 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+input[type="password"]:focus {
+    border-color: #7b1fa2;
+    box-shadow: 0 0 10px rgba(123, 31, 162, 0.5);
+}
+
+button {
+    padding: 15px 35px;
+    background: linear-gradient(135deg, #7b1fa2, #ba68c8);
+    border: none;
+    color: white;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: transform 0.4s ease, background 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 8px 20px rgba(123, 31, 162, 0.4);
+}
+
+button:hover {
+    background: linear-gradient(135deg, #ba68c8, #7b1fa2);
+    transform: scale(1.1);
+    box-shadow: 0 12px 30px rgba(123, 31, 162, 0.5);
+}
+
+#errorMessage {
+    color: #e63946;
+    margin-top: 15px;
+    animation: shake 0.5s ease-in-out;
+    display: none;
+    font-size: 16px;
+}
+
+/* Tabla de usuarios */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 30px;
+    animation: fadeInUp 1.2s ease-in-out;
+    border-radius: 12px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #ffffff, #f7f7f7);
+}
+
+th, td {
+    padding: 20px;
+    border-bottom: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 18px;
+    color: #333;
+}
+
+th {
+    background: linear-gradient(135deg, #7b1fa2, #ba68c8);
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+tr:hover {
+    background-color: #f1f3f5;
+    transition: background-color 0.3s ease-in-out;
+    transform: scale(1.01);
+}
+
+/* Gráfica */
+#visitChart {
+    margin-top: 50px;
+    background-color: white;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    animation: fadeInUp 1.5s ease-in-out;
+    width: 100%;
+    height: 500px;  /* Aumenta la altura de la gráfica */
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes shake {
+    0% { transform: translateX(-8px); }
+    50% { transform: translateX(8px); }
+    100% { transform: translateX(0); }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes backgroundShift {
+    from {
+        background: linear-gradient(135deg, #e0f7fa, #e1bee7);
+    }
+    to {
+        background: linear-gradient(135deg, #f3e5f5, #b2ebf2);
+    }
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    #passwordPrompt, #dashboard {
+        padding: 30px;
+    }
+
+    th, td {
+        padding: 15px;
+        font-size: 16px;
+    }
+
+    button {
+        padding: 12px 25px;
+        font-size: 16px;
+    }
+
+    #visitChart {
+        padding: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    #passwordPrompt, #dashboard {
+        padding: 20px;
+    }
+
+    th, td {
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    button {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    #visitChart {
+        padding: 20px;
+    }
+}
